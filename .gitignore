@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+dist/
+.*
+!.csscomb.json
+!.gitignore
+!.gitattributes
+!.hound.yml
+!.scss-lint.yml
