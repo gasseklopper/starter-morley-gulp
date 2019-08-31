@@ -17,7 +17,7 @@ const source = require('vinyl-source-stream')
 const sass = require('gulp-sass')
 const uglify = require('gulp-uglify')
 
-//brsowser-sync Modules
+//browser-sync Modules
 const browserSync = require('browser-sync').create()
 
 // File Path variables
@@ -82,7 +82,8 @@ function start(done) {
 }
 
 exports.default = series(
-	parallel(scssTask, jsTask)
+	parallel(scssTask, jsTask),
+	start
 )
 
 exports.scssTask = scssTask
