@@ -6,15 +6,16 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <link rel="stylesheet" href="assets/css/spectre.min.css">
+  <link rel="stylesheet" href="assets/css/spectre-exp.min.css">
 </head>
 <body>
   {% include "partials/header.njk" %}
   {% include "partials/navigation.njk" %}
 
-  <article class="content">
+
     {% block content %}
     {% endblock %}
-  </article>
+
 
   {% include "partials/footer.njk" %}
   <script src="assets/js/script.min.js"></script>
