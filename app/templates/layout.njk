@@ -1,0 +1,22 @@
+<!-- layout.njk -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+  {% include "partials/header.njk" %}
+  {% include "partials/navigation.njk" %}
+
+  <article class="content">
+    {% block content %}
+    {% endblock %}
+  </article>  
+
+  {% include "partials/footer.njk" %}
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

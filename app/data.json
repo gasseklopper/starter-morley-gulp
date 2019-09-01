@@ -1,0 +1,12 @@
+{
+  "animals": [{
+    "type": "dog",
+    "sound": "woof"
+  }, {
+    "type": "cat",
+    "sound": "meow"
+  }, {
+    "type": "cow",
+    "sound": "moo"
+  }]
+}

@@ -16,6 +16,12 @@ const sourcemaps = require('gulp-sourcemaps')
 const source = require('vinyl-source-stream')
 const sass = require('gulp-sass')
 const uglify = require('gulp-uglify')
+const malvid = require('malvid')
+const pAll = require('p-all')
+const util = require('util')
+const fs = require('fs')
+const nunjucksRender = require('gulp-nunjucks-render')
+const data = require('gulp-data')
 
 //browser-sync Modules
 const browserSync = require('browser-sync').create()
@@ -29,6 +35,7 @@ const paths = {
   styleWatch:  './assets/scss/**/*.scss',
   styleDist:  './dist/assets/css',
   styleSrc:  './assets/scss/**/*.scss',
+  nunjucksWatch: './app/**/*',
 }
 // Javascript source array
 const jsFILES = [paths.jsSRC]
@@ -37,7 +44,7 @@ const jsFILES = [paths.jsSRC]
 function scssTask(done){
 	return src(paths.styleWatch)
 		.pipe(sourcemaps.init() )
-		.pipe(sass({outputStyle: 'compact', precision: 10}).on('error', sass.logError))
+		.pipe(sass({outputStyle: 'compact', precision: 10}).on('error',sass.logError))
 		.pipe(autoprefixer({
 			cascade: false
 		}))
@@ -56,28 +63,63 @@ function jsTask(done){
 		return browserify({
 			entries: [entry]
 		})
-		.transform( babelify, {presets: ['env']})
-		.bundle()
-		.pipe( source( entry ))
-		.pipe( rename( {extname: '.min.js'} ))
-		.pipe( buffer())
-		.pipe( sourcemaps.init({ loadMaps: true }))
-		.pipe( uglify())
-		.pipe( sourcemaps.write( './'))
-		.pipe(dest(paths.jsDIST))
+			.transform( babelify, {presets: ['env']})
+			.bundle()
+			.pipe( source( entry ))
+			.pipe( rename( {extname: '.min.js'} ))
+			.pipe( buffer())
+			.pipe( sourcemaps.init({ loadMaps: true }))
+			.pipe( uglify())
+			.pipe( sourcemaps.write( './'))
+			.pipe(dest(paths.jsDIST))
 	})
 	done()
+}
+
+async function malvidTask(done){
+	const results = await malvid({
+		src: './src'
+	})
+	const html = await results.html()
+	const json = await results.json()
+	await pAll([
+		() => util.promisify(fs.writeFile)('src/index.html', html),
+		() => util.promisify(fs.writeFile)('src/index.html.json',  JSON.stringify(json))
+	])
+	done()
+}
+
+// Renders Nunjucks
+function nunjucksTask(){
+	console.log('Rendering nunjucks files..')
+	return src("./app/pages/**/*.+(html|njk)")
+		.pipe(
+			data(() => {
+				return require("./app/data.json");
+			})
+		)
+		.pipe(nunjucksRender({
+			path: ['./app/templates'] // String or Array
+		}))
+		.pipe(dest('dist'))
 }
 
 function start(done) {
 	browserSync.init({
 		server: {
-			baseDir: './'
+			baseDir: './dist'
 		}
 	})
 	watch(paths.styleWatch, scssTask)
+	watch(paths.nunjucksWatch, nunjucksTask)
+	watch('src/**/*.html').on('change', browserSync.reload)
+	watch('src/index.html').on('change', browserSync.reload)
+	watch('src/index.html.json').on('change', browserSync.reload)
 	watch('./*.html').on('change', browserSync.reload)
 	watch('./assets/js/**/*.js').on('change', browserSync.reload)
+	watch('./app/pages/**/*.+(html|njk)').on('change', browserSync.reload)
+	watch('./app/templates/**/*.+(html|njk)').on('change', browserSync.reload)
+
 	done()
 }
 
@@ -88,4 +130,6 @@ exports.default = series(
 
 exports.scssTask = scssTask
 exports.jsTask = jsTask
+exports.malvidTask = malvidTask
+exports.nunjucksTask = nunjucksTask
 exports.start = start
