@@ -107,7 +107,7 @@ function nunjucksTask(){
 function start(done) {
 	console.log('Start watching...')
 	browserSync.init({
-		server: {baseDir: './dist'}
+		server: {baseDir: './src'}
 	})
 	watch(paths.styleWatch, scssTask)
 	watch(paths.nunjucksWatch, nunjucksTask)
@@ -120,6 +120,7 @@ function start(done) {
 // Run default Task 'gulp'
 exports.default = series(
 	parallel(scssTask, jsTask),
+	malvidTask,
 	start
 )
 
