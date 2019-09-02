@@ -23,6 +23,9 @@ const sass 				= require('gulp-sass')
 const uglify 			= require('gulp-uglify')
 const util 				= require('util')
 
+const swig = require('gulp-swig');
+const path = require('path');
+
 //browser-sync Modules
 const browserSync = require('browser-sync').create()
 
@@ -91,12 +94,12 @@ async function malvidTask(done){
 // Renders Nunjucks
 function nunjucksTask(){
 	console.log('Rendering nunjucks files..')
-	return src("./app/**/**/*.+(html|njk)")
-		.pipe(
-			data(() => {
-				return require("./app/pages/data.json");
-			})
-		)
+	return src("./app/button/*.+(html|njk)")
+		.pipe(data(function(file) {
+			console.log( path.basename(file.path))
+			return JSON.parse(fs.readFileSync('./app/button/' + path.basename(file.path) + '.json'));
+			}))
+		.pipe(swig())
 		.pipe(nunjucksRender({
 			path: ['./app/templates'] // String or Array
 		}))

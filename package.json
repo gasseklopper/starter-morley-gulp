@@ -31,11 +31,13 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-swig": "^0.9.1",
     "gulp-uglify": "^3.0.2",
     "jstransformer-highlight": "^2.0.0",
     "jstransformer-markdown-it": "^2.1.0",
     "malvid": "^5.7.1",
     "p-all": "^2.1.0",
+    "path": "^0.12.7",
     "util": "^0.12.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
