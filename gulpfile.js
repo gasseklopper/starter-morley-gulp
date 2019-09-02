@@ -82,8 +82,8 @@ async function malvidTask(done){
 	const html = await results.html()
 	const json = await results.json()
 	await pAll([
-		() => util.promisify(fs.writeFile)('src/index.html', html),
-		() => util.promisify(fs.writeFile)('src/index.html.json',  JSON.stringify(json))
+		() => util.promisify(fs.writeFile)('dist/index.html', html),
+		() => util.promisify(fs.writeFile)('dist/index.html.json',  JSON.stringify(json))
 	])
 	done()
 }
@@ -91,7 +91,7 @@ async function malvidTask(done){
 // Renders Nunjucks
 function nunjucksTask(){
 	console.log('Rendering nunjucks files..')
-	return src("./app/pages/**/*.+(html|njk)")
+	return src("./app/**/**/*.+(html|njk)")
 		.pipe(
 			data(() => {
 				return require("./app/data.json");
@@ -107,11 +107,15 @@ function nunjucksTask(){
 function start(done) {
 	console.log('Start watching...')
 	browserSync.init({
-		server: {baseDir: './src'}
+		server: {baseDir: './dist'}
 	})
 	watch(paths.styleWatch, scssTask)
+	watch(paths.nunjucksWatch, malvidTask)
 	watch(paths.nunjucksWatch, nunjucksTask)
 	watch('./assets/js/**/*.js').on('change', browserSync.reload)
+	watch('./dist/index.html').on('change', browserSync.reload)
+	watch('./dist/index.html.json').on('change', browserSync.reload)
+	watch('./app//**/*.+(html|njk)').on('change', browserSync.reload)
 	watch('./app/pages/**/*.+(html|njk)').on('change', browserSync.reload)
 	watch('./app/templates/**/*.+(html|njk)').on('change', browserSync.reload)
 	done()
