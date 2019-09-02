@@ -94,7 +94,7 @@ function nunjucksTask(){
 	return src("./app/**/**/*.+(html|njk)")
 		.pipe(
 			data(() => {
-				return require("./app/data.json");
+				return require("./app/pages/data.json");
 			})
 		)
 		.pipe(nunjucksRender({
