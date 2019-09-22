@@ -1,0 +1,14 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<h3>This is the content area.About
+</h3>
+<p>Featuring a loop example...</p>
+<ul class="animals list-bullet">
+  {% for animal in animals %}
+    <li>{{animal.type}} goes {{animal.sound}}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

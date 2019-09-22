@@ -23,9 +23,6 @@ const sass 				= require('gulp-sass')
 const uglify 			= require('gulp-uglify')
 const util 				= require('util')
 
-const swig = require('gulp-swig');
-const path = require('path');
-
 //browser-sync Modules
 const browserSync = require('browser-sync').create()
 
@@ -80,7 +77,7 @@ function jsTask(done){
 // Async Malvid UI Task
 async function malvidTask(done){
 	const results = await malvid({
-		src: './app'
+		src: './app/components/pages'
 	})
 	const html = await results.html()
 	const json = await results.json()
@@ -90,18 +87,23 @@ async function malvidTask(done){
 	])
 	done()
 }
-
+function getDataForFile(file) {
+  return {
+    example: 'data loaded for ' + file.relative
+  };
+}
 // Renders Nunjucks
 function nunjucksTask(){
 	console.log('Rendering nunjucks files..')
-	return src("./app/button/*.+(html|njk)")
-		.pipe(data(function(file) {
-			console.log( path.basename(file.path))
-			return JSON.parse(fs.readFileSync('./app/button/' + path.basename(file.path) + '.json'));
-			}))
-		.pipe(swig())
+	return src("./app/components/pages/**/*.+(html|njk)")
+		.pipe(
+			data(() => {
+				return require("./app/components/pages/data.json");
+			})
+		)
+		.pipe(data(getDataForFile))
 		.pipe(nunjucksRender({
-			path: ['./app/templates'] // String or Array
+			path: ['./app/components/'] // String or Array
 		}))
 		.pipe(dest('dist'))
 }
