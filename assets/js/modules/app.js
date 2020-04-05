@@ -1,7 +1,7 @@
 // import anime from 'animejs/lib/anime.es.js';
 class App {
 	constructor() {
-		console.info('App initialized')
+		console.info('App initiddafafasdasdlized')
 
 	}
 }

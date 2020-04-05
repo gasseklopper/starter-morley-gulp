@@ -22,6 +22,7 @@ const source 			= require('vinyl-source-stream')
 const sass 				= require('gulp-sass')
 const uglify 			= require('gulp-uglify')
 const util 				= require('util')
+const del 				= require('del')
 
 //browser-sync Modules
 const browserSync = require('browser-sync').create()
@@ -29,6 +30,7 @@ const browserSync = require('browser-sync').create()
 // File Path variables
 const paths = {
 	jsSRC: './assets/js/script.js',
+	jsSRC_folder: './assets/js/**/*.js',
 	jsDIST: './dist',
 	styleWatch:  './assets/scss/**/*.scss',
 	styleDist:  './dist/assets/css',
@@ -36,9 +38,10 @@ const paths = {
 }
 // Javascript source array
 const jsFILES = [paths.jsSRC]
-
+const clean_assets = () => del(['dist/assets']);
 //Sass Task
 function scssTask(done){
+	console.log('Rendering scss files..')
 	return src(paths.styleWatch)
 		.pipe(sourcemaps.init() )
 		.pipe(sass({outputStyle: 'compact', precision: 10}).on('error',sass.logError))
@@ -57,6 +60,7 @@ function scssTask(done){
 
 //Js Task
 function jsTask(done){
+	console.log('Rendering javaScript files..')
 	jsFILES.map(function( entry ){
 		return browserify({
 			entries: [entry]
@@ -80,70 +84,54 @@ function jsTask(done){
 	done()
 }
 
-// Async Malvid UI Task
-async function malvidTask(done){
-	const results = await malvid({
-		src: './app/components/pages'
-	})
-	const html = await results.html()
-	const json = await results.json()
-	await pAll([
-		() => util.promisify(fs.writeFile)('dist/index.html', html),
-		() => util.promisify(fs.writeFile)('dist/index.html.json',  JSON.stringify(json))
-	])
-	done()
-}
-function getDataForFile(file) {
-  return {
-    example: 'data loaded for ' + file.relative
-  };
-}
-
-
 // Renders Nunjucks
-function nunjucksTask(){
+function nunjucksTask(done){
 	console.log('Rendering nunjucks files..')
 	return src("./app/pages/**/*.+(html|njk)")
 		.pipe(
 			data(() => {
-				return require("./app/data.json");
+				return require("./app/data.json")
 			})
 		)
 		.pipe(nunjucksRender({
 			path: ['./app/templates'] // String or Array
 		}))
 		.pipe(dest('dist'))
+		done()
+
 }
 
+// Callback when ready reload browsersync
+function reload(done) {
+	console.log('browserSync reloading files..')
+	browserSync.reload()
+	done()
+}
 
-// Watch Tasks
-function start(done) {
+// SERVE Tasks
+function serve(done) {
 	console.log('Start watching...')
 	browserSync.init({
 		server: {baseDir: './dist'}
 	})
-	watch(paths.styleWatch, scssTask)
-	// watch(paths.nunjucksWatch, malvidTask)
-	watch(paths.nunjucksWatch, nunjucksTask)
-	watch('./assets/js/**/*.js').on('change', browserSync.reload)
-	watch('./dist/index.html').on('change', browserSync.reload)
-	watch('./dist/index.html.json').on('change', browserSync.reload)
-	watch('./app/**/*.+(html|njk)').on('change', browserSync.reload)
-	watch('./app/pages/**/*.+(html|njk)').on('change', browserSync.reload)
-	watch('./app/templates/**/*.+(html|njk)').on('change', browserSync.reload)
 	done()
 }
 
+// Watch Tasks
+const watch_nunjucks = () => watch(paths.nunjucksWatch, series(nunjucksTask, reload))
+const watch_scss = () => watch(paths.styleWatch, series(scssTask, reload))
+const watch_js =   () => watch(paths.jsSRC_folder, series(jsTask, reload));
+
 // Run default Task 'gulp'
 exports.default = series(
-	parallel(scssTask, jsTask),
-	// malvidTask,
-	start
+	clean_assets,
+	parallel(scssTask, jsTask, nunjucksTask),
+	serve,
+	parallel(watch_scss, watch_js, watch_nunjucks),
 )
 
 // Run Tasks 'gulp scssTask', 'gulp jsTask'...
 exports.scssTask = scssTask
 exports.jsTask = jsTask
-// exports.malvidTask = malvidTask
 exports.nunjucksTask = nunjucksTask
-exports.start = start
+exports.serve = serve
