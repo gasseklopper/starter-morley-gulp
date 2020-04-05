@@ -61,7 +61,13 @@ function jsTask(done){
 		return browserify({
 			entries: [entry]
 		})
-			.transform( babelify, {presets: ['env']})
+			.transform( babelify,
+				{
+					presets: ['env'],
+					sourceMaps: true,
+					global: true,
+					ignore: /\/node_modules/
+				})
 			.bundle()
 			.pipe( source( entry ))
 			.pipe( rename( {extname: '.min.js'} ))
@@ -92,21 +98,23 @@ function getDataForFile(file) {
     example: 'data loaded for ' + file.relative
   };
 }
+
+
 // Renders Nunjucks
 function nunjucksTask(){
 	console.log('Rendering nunjucks files..')
-	return src("./app/components/pages/**/*.+(html|njk)")
+	return src("./app/pages/**/*.+(html|njk)")
 		.pipe(
 			data(() => {
-				return require("./app/components/pages/data.json");
+				return require("./app/data.json");
 			})
 		)
-		.pipe(data(getDataForFile))
 		.pipe(nunjucksRender({
-			path: ['./app/components/'] // String or Array
+			path: ['./app/templates'] // String or Array
 		}))
 		.pipe(dest('dist'))
 }
+
 
 // Watch Tasks
 function start(done) {
@@ -115,12 +123,12 @@ function start(done) {
 		server: {baseDir: './dist'}
 	})
 	watch(paths.styleWatch, scssTask)
-	watch(paths.nunjucksWatch, malvidTask)
+	// watch(paths.nunjucksWatch, malvidTask)
 	watch(paths.nunjucksWatch, nunjucksTask)
 	watch('./assets/js/**/*.js').on('change', browserSync.reload)
 	watch('./dist/index.html').on('change', browserSync.reload)
 	watch('./dist/index.html.json').on('change', browserSync.reload)
-	watch('./app//**/*.+(html|njk)').on('change', browserSync.reload)
+	watch('./app/**/*.+(html|njk)').on('change', browserSync.reload)
 	watch('./app/pages/**/*.+(html|njk)').on('change', browserSync.reload)
 	watch('./app/templates/**/*.+(html|njk)').on('change', browserSync.reload)
 	done()
@@ -129,13 +137,13 @@ function start(done) {
 // Run default Task 'gulp'
 exports.default = series(
 	parallel(scssTask, jsTask),
-	malvidTask,
+	// malvidTask,
 	start
 )
 
 // Run Tasks 'gulp scssTask', 'gulp jsTask'...
 exports.scssTask = scssTask
 exports.jsTask = jsTask
-exports.malvidTask = malvidTask
+// exports.malvidTask = malvidTask
 exports.nunjucksTask = nunjucksTask
 exports.start = start
