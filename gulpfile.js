@@ -28,11 +28,11 @@ const browserSync = require('browser-sync').create()
 
 // File Path variables
 const paths = {
-	jsSRC: './assets/js/script.js',
-	jsSRC_folder: './assets/js/**/*.js',
+	jsSRC: './src/assets/js/script.js',
+	jsSRC_folder: './src/assets/js/**/*.js',
 	jsDIST: './dist',
-	styleWatch:  './assets/scss/**/*.scss',
-	styleDist:  './dist/assets/css',
+	styleWatch:  './src/assets/scss/**/*.scss',
+	styleDist:  './dist/src/assets/css',
 	nunjucksWatch: './app/**/*',
 }
 // Javascript source array
