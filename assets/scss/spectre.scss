@@ -1,52 +1,14 @@
-// Variables and mixins
-// a {
-// 	transition: all 320ms ease;
-// }
-@import "variables";
+// Helpers Variables and mixins
 @import "1-helpers/1-helpers";
 
-
-/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
-// Reset and dependencies
+// Reset and dependencies base Elements
 @import "2-base/2-base";
 
-// Elements
-@import "typography";
-@import "asian";
-@import "tables";
-@import "buttons";
-@import "forms";
-@import "labels";
-@import "codes";
-@import "media";
-
 // Layout
-@import "layout";
-@import "hero";
-@import "navbar";
+@import "3-layout/3-layout";
 
 // Components
-@import "accordions";
-@import "avatars";
-@import "badges";
-@import "breadcrumbs";
-@import "bars";
-@import "cards";
-@import "chips";
-@import "dropdowns";
-@import "empty";
-@import "menus";
-@import "modals";
-@import "navs";
-@import "pagination";
-@import "panels";
-@import "popovers";
-@import "steps";
-@import "tabs";
-@import "tiles";
-@import "toasts";
-@import "tooltips";
+@import "5-components/5-components";
 
 // Utility classes
-@import "animations";
-@import "utilities";
+@import "7-utilities/7-utilities";

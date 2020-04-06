@@ -10,7 +10,6 @@ const csscomb 			= require('gulp-csscomb')
 const cssnano 			= require('gulp-cssnano')
 const data 				= require('gulp-data')
 const fs 				= require('fs')
-const malvid 			= require('malvid')
 const nunjucksRender 	= require('gulp-nunjucks-render')
 const pAll 				= require('p-all')
 const pug 				= require('gulp-pug')
@@ -101,14 +100,14 @@ function nunjucksTask(done){
 
 }
 
-// Callback when ready reload browsersync
+// reload browsersync
 function reload(done) {
 	console.log('browserSync reloading files..')
 	browserSync.reload()
 	done()
 }
 
-// SERVE Tasks
+// SERVE browsersync Task
 function serve(done) {
 	console.log('Start watching...')
 	browserSync.init({
@@ -119,15 +118,23 @@ function serve(done) {
 
 // Watch Tasks
 const watch_nunjucks = () => watch(paths.nunjucksWatch, series(nunjucksTask, reload))
-const watch_scss = () => watch(paths.styleWatch, series(scssTask, reload))
-const watch_js =   () => watch(paths.jsSRC_folder, series(jsTask, reload));
+const watch_scss	 = () => watch(paths.styleWatch, 	series(scssTask, reload))
+const watch_js 		 = () => watch(paths.jsSRC_folder, 	series(jsTask, reload));
 
 // Run default Task 'gulp'
 exports.default = series(
 	clean_assets,
-	parallel(scssTask, jsTask, nunjucksTask),
+	parallel(
+		scssTask,
+		jsTask,
+		nunjucksTask
+	),
 	serve,
-	parallel(watch_scss, watch_js, watch_nunjucks),
+	parallel(
+		watch_scss,
+		watch_js,
+		watch_nunjucks
+	)
 )
 
 // Run Tasks 'gulp scssTask', 'gulp jsTask'...
