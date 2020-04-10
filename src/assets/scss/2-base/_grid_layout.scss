@@ -29,6 +29,16 @@
   }
 }
 
+.container {
+  &.grid-xl {
+    .row {
+      .column.col-6{
+        background-color: red;
+      }
+    }
+  }
+
+}
 // Responsive breakpoint system
 .show-xs,
 .show-sm,
@@ -39,7 +49,7 @@
 }
 
 // Responsive grid system
-.columns {
+.row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -$layout-spacing;

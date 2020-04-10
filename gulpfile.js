@@ -4,6 +4,7 @@ const { src, dest, series, parallel, watch} = require('gulp')
 const autoprefixer 		= require('gulp-autoprefixer')
 const babelify 			= require('babelify')
 const browserify 		= require('browserify')
+
 const buffer 			= require('vinyl-buffer')
 const cleancss 			= require('gulp-clean-css')
 const csscomb 			= require('gulp-csscomb')
@@ -97,7 +98,6 @@ function nunjucksTask(done){
 		}))
 		.pipe(dest('dist'))
 		done()
-
 }
 
 // reload browsersync
@@ -108,7 +108,7 @@ function reload(done) {
 }
 
 // SERVE browsersync Task
-function serve(done) {
+function serveTask(done) {
 	console.log('Start watching...')
 	browserSync.init({
 		server: {baseDir: './dist'}
@@ -129,7 +129,7 @@ exports.default = series(
 		jsTask,
 		nunjucksTask
 	),
-	serve,
+	serveTask,
 	parallel(
 		watch_scss,
 		watch_js,
@@ -141,4 +141,4 @@ exports.default = series(
 exports.scssTask = scssTask
 exports.jsTask = jsTask
 exports.nunjucksTask = nunjucksTask
-exports.serve = serve
+exports.serveTask = serveTask
