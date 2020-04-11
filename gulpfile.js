@@ -94,9 +94,17 @@ function nunjucksTask(done){
 			})
 		)
 		.pipe(nunjucksRender({
-			path: ['./app/templates'] // String or Array
+			path: ['./app/root'] // String or Array
 		}))
 		.pipe(dest('dist'))
+		done()
+}
+
+// Copy Images
+function imagesTask(done) {
+	console.log('build images..')
+	return src("./src/assets/img/**/*.{gif,jpg,png,svg}")
+		.pipe(dest('dist/src/assets/img'))
 		done()
 }
 
@@ -120,6 +128,7 @@ function serveTask(done) {
 const watch_nunjucks = () => watch(paths.nunjucksWatch, series(nunjucksTask, reload))
 const watch_scss	 = () => watch(paths.styleWatch, 	series(scssTask, reload))
 const watch_js 		 = () => watch(paths.jsSRC_folder, 	series(jsTask, reload));
+const watch_images 	 = () => watch('./src/assets/img/**/*.{gif,jpg,png,svg}', 	series(imagesTask, reload));
 
 // Run default Task 'gulp'
 exports.default = series(
@@ -130,10 +139,12 @@ exports.default = series(
 		nunjucksTask
 	),
 	serveTask,
+	imagesTask,
 	parallel(
 		watch_scss,
 		watch_js,
-		watch_nunjucks
+		watch_nunjucks,
+		watch_images,
 	)
 )
 

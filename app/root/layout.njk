@@ -1,0 +1,40 @@
+<!-- layout.njk -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="src/assets/css/spectre.min.css">
+  <link rel="stylesheet" href="src/assets/css/spectre-exp.min.css">
+  <link rel="stylesheet" href="src/assets/css/spectre-icons.css">
+
+</head>
+<body>
+  <div class="container grid-xl">
+    {% include "./template-parts/header.njk" %}
+    {% include "./template-parts/nav.njk" %}
+  </div>
+
+  <div class="container grid-lg">
+    <div class="row">
+      <div class="column">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        {% block content2 %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container grid-lg">
+    {% include "./template-parts/footer.njk" %}
+  </div>
+
+  <script src="../../../src/assets/js/script.min.js"></script>
+  {# <script src="../../../src/assets/js/libs/anime.js"></script> #}
+</body>
+</html>

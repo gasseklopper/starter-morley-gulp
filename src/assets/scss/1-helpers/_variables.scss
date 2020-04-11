@@ -5,18 +5,19 @@ $version: "0.0.1";
 $rtl: false !default;
 
 // Core colors
-$primary-color: #303742 !default;
+// Core colors
+$primary-color: #de3350 !default; // comwrap color: fff
 $primary-color-dark: darken($primary-color, 3%) !default;
-$primary-color-light: lighten($primary-color, 3%) !default;
-$secondary-color: lighten($primary-color, 37.5%) !default;
+$primary-color-light: lighten($primary-color, 40%) !default;
+$secondary-color: #ddd !default;   // comwrap color: de3350
 $secondary-color-dark: darken($secondary-color, 3%) !default;
 $secondary-color-light: lighten($secondary-color, 3%) !default;
 
 // Gray colors
-$dark-color: #303742 !default;
-$light-color: #fff !default;
-$gray-color: lighten($dark-color, 55%) !default;
-$gray-color-dark: darken($gray-color, 30%) !default;
+$dark-color: #454d5d !default;
+$light-color: #ddd !default;
+$gray-color: lighten($dark-color, 40%) !default;
+$gray-color-dark: darken($gray-color, 25%) !default;
 $gray-color-light: lighten($gray-color, 20%) !default;
 
 $border-color: lighten($dark-color, 65%) !default;

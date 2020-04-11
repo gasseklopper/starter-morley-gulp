@@ -1,0 +1,43 @@
+{% set body_class = "resorces" %}
+{% import "./components/cards.njk" as card %}
+
+{% extends "layout.njk" %}
+
+{% block content %}
+<!-- Hero -->
+
+
+<main class="full-width-site-container">
+
+  <nav class="subnav">
+    <label for="services-nav-select">Jump To: </label>
+    <select id="services-nav-select">
+      <option value="#major-providers">Major Providers</option>
+      <option value="#static-hosting">Static Hosting</option>
+      <option value="#web-forms">Forms</option>
+      <option value="#payments">Payments</option>
+      <option value="#media-storage">Media Storage</option>
+      <option value="#email-sms">Email, SMS, & Notifications</option>
+      <option value="#cms">CMS's & Data Storage</option>
+      <option value="#real-time">Real Time</option>
+      <option value="#auth">Auth</option>
+      <option value="#monitoring">Monitoring</option>
+    </select>
+  </nav>
+
+  <header class="section-header" id="major-providers">
+    <h2>
+      The Major Providers
+    </h2>
+    <p>Need to calculate costs? Try the <a href="http://serverlesscalc.com/">Serverless Cost Calculator</a>.</p>
+  </header>
+
+  <div class="card-grid">
+    {% include "./portfolio-categories/auth.njk" %}
+  </div>
+
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+.about {
+	h1, p {
+		padding: 0.4em;
+		background-color: $dark-color;
+	}
+	h1 {
+		color: $primary-color;
+		text-decoration: none;
+	}
+}

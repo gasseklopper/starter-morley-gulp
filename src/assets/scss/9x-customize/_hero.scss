@@ -1,0 +1,52 @@
+.hero {
+
+	&__headline {
+		margin: 1em 0;
+		h2 {
+			font-weight: bold;
+			padding: 0;
+			margin: 5px;
+		}
+	}
+
+	figure {
+		margin: 0;
+		padding: 0;
+	}
+
+
+	&__image {
+		border-radius: 15px;
+	}
+
+	&__imageoverlay {
+		//margin-bottom: 1em;
+		height: 48em;
+		border-radius: 15px;
+		background: url(./../../assets/img/tokyo/Markus_Morley_Tokyo_day_003-3969.jpg);
+		background-size: contain;
+		//background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+
+	&__imagetextbox {
+		//height: 0em;
+		height: 100%;
+		background-color: $primary-color;
+		//mix-blend-mode: multiply;
+		border-radius: 15px;
+		//padding: 8em;
+		top: 20px;
+		left: 40px;
+		position: relative;
+		//width: 100px;
+		h2 {
+			border-radius: 15px;
+			height: 300px;
+			width: 200px;
+background-color: $primary-color;
+			color: white;
+
+		}
+	}
+}

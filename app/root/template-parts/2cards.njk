@@ -1,0 +1,98 @@
+{%
+  macro tool(
+    name,
+    url,
+    image_url,
+    image_alt,
+    capabilities,
+    overview)
+%}
+
+<div class="tool">
+  <a href="{{ url }}" class="image-wrap-link">
+    <img src="{{ image_url }}" alt="{{ image_alt }}">
+  </a>
+  <div class="tool-about">
+    <h3>
+      <a href="{{ url }}">
+        {{ name }}
+      </a>
+    </h3>
+    <div class="capabilities">
+      <h4>Relevant Capabilities</h4>
+      {% for capability in capabilities %}
+      <span data-capability="{{ capability }}">
+        {{ capability }}
+      </span>
+      {% endfor %}
+    </div>
+    <div class="overview">
+      <h4>Quick Overview</h4>
+      <p>{{ overview | safe }}</p>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}
+
+
+{%
+  macro idea(
+    name,
+    capabilities,
+    overview,
+    resources)
+%}
+
+<div class="idea">
+  <div class="idea-about">
+    <h3>
+      {{ name }}
+    </h3>
+    <div class="capabilities">
+      <h4>Serverless Tech Needed</h4>
+      {% for capability in capabilities %}
+      <span data-capability="{{ capability }}">
+        {{ capability }}
+      </span>
+      {% endfor %}
+    </div>
+    <div class="overview">
+      <h4>The Concept</h4>
+      <p>{{ overview | safe }}</p>
+
+      <h4>Resources</h4>
+      <p>{{ resources | safe }}</p>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}
+
+
+{%
+  macro resource(
+    title,
+    author,
+    description,
+    url,
+    tags)
+%}
+
+<div class="resource" data-tags="{% for tag in tags %}{{ tag }} {% endfor %}">
+  <h3>
+    <a href="{{ url }}">
+    {{ title }}
+    </a>
+  </h3>
+
+  <div class="resource-author">
+    By {{ author }}
+  </div>
+
+  <p class="resource-description">
+    {{ description | safe }}
+  </p>
+</div>
+
+{% endmacro %}

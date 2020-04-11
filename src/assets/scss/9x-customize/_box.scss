@@ -1,0 +1,14 @@
+// box elemet for pattern shadow behind images
+.box {
+	&__shadow {
+		padding: 0 1em 1em 0;
+		//height: 100%;
+
+		//width: 100%;
+		background: url(./../../assets/img/ui/background-stripe.png);
+
+		img {
+			border-radius: 8px 0 0 0;
+		}
+	}
+}

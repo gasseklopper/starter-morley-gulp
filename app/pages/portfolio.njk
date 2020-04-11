@@ -1,0 +1,231 @@
+{% set body_class = "tools" %}
+{% import "./components/cards.njk" as card %}
+
+{% extends "layout.njk" %}
+
+{% block content %}
+<!-- Hero -->
+		<div class="container grid-lg">
+			<section class="hero box">
+				<div class="row">
+					<div class="column col-12">
+						<!-- hero headline -->
+						<div class="hero__headline">
+						</div>
+					</div>
+					<!-- Hero image and caption text-->
+					<div class="column col-12">
+						<div class="hero__imageoverlay">
+							<div class="hero__imagetextbox box__shadow">
+								<h2 class="text-center">Welcome to my portfolio </h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	<!-- featured -->
+		<div class="container grid-xl">
+			<!-- anchor id for navigation -->
+			<section class="featured" id="featured-link">
+				<div class="row">
+					<div class="column col-sm-12 col-12">
+						<!-- Featured headline -->
+						<div class="featured__headline">
+							<h2 class="text-center">Nice features </h2>
+							<h3 class="text-center"><small class="label label-primary">ready to start from scratch</small></h3>
+						</div>
+					</div>
+					<!-- Featured content -->
+					<div class="column col-sm-12 col-4">
+					<article class="featured">
+						<figure>
+							<img src="src/assets/img/tokyo/taatoo/Markus_Morley_Tokyo_day 006-8024_thumb.jpg" class="featured__image box__shadow img-responsive" alt="">
+							<h4 class="text-center">Lightweight</h4>
+							<h5 class="text-center"><small class="label label-primary">(~10KB gzipped) </small></h5>
+							<figcaption class="figure-caption text-center">A picture by <a href="sites/tokyo/taatoo.html">unsplash</a></figcaption>
+						</figure>
+					</article>
+					</div>
+					<div class="column col-sm-6 col-4">
+						<article class="featured">
+							<figure>
+								<img src="src/assets/img/tokyo/buildings/Markus_morley_tokyo_day_005-6633_thumb.jpg" class="featured__image box__shadow img-responsive" alt="">
+								<h4 class="text-center">Modern</h4>
+								<h5 class="text-center"><small class="label label-primary">Elegantly designed</small></h5>
+								<figcaption class="figure-caption text-center">A picture by <a href="sites/tokyo/modern.html">unsplash</a></figcaption>
+							</figure>
+						</article>
+					</div>
+					<div class="column col-sm-6 col-4">
+						<article class="featured">
+							<figure>
+								<img src="src/assets/img/tokyo/living/Markus_Morley_Tokyo_day_003-4905_thumb.jpg" class="featured__image  box__shadow img-responsive" alt="">
+								<h4 class="text-center">Responsiv</h4>
+								<h5 class="text-center"><small class="label label-primary">Flexbox-based</small></h5>
+								<figcaption class="figure-caption text-center">A picture by <a href="https://unsplash.com/photos/Fq54FqucgCE">unsplash</a></figcaption>
+							</figure>
+						</article>
+					</div>
+					<div class="column col-sm-6 col-md-12 col-4">
+						<article class="featured">
+							<figure>
+								<img src="src/assets/img/tokyo/urbanity/Markus_Morley_Tokyo_Day 001-3030_thumb.jpg" class="featured__image box__shadow img-responsive" alt="">
+								<h4 class="text-center">Popovers</h4>
+								<h5 class="text-center"><small class="label label-primary">small overlay</small></h5>
+								<figcaption class="figure-caption text-center">A picture by <a href="https://unsplash.com/photos/MF_hmgZcaz4">unsplash</a></figcaption>
+							</figure>
+						</article>
+					</div>
+
+
+					<div class="column col-sm-6 col-md-6 col-4">
+						<article class="featured">
+							<figure>
+								<img src="src/assets/img/tokyo/faces/faces-9208_thumb.jpg" class="featured__image box__shadow img-responsive" alt="">
+								<h4 class="text-center">Experimentals</h4>
+								<h5 class="text-center"><small class="label label-primary">many features</small></h5>
+								<figcaption class="figure-caption text-center">A picture by <a href="https://unsplash.com/photos/WmmcTOe3vqA">unsplash</a></figcaption>
+							</figure>
+						</article>
+					</div>
+					<div class="column col-sm-12 col-md-6 col-4">
+						<article class="featured">
+							<figure>
+								<img src="src/assets/img/tokyo/fish/IMG_0821_thumb.jpg" class="featured__image  box__shadow img-responsive" alt="">
+								<h4 class="text-center">Custom version </h4>
+								<h5 class="text-center"><small class="label label-primary label-primary">Sass files</small></h5>
+								<figcaption class="figure-caption text-center">A picture by <a href="sites/tokyo/fish.html">unsplash</a></figcaption>
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section><!--end .featured -->
+		</div><!--end container -->
+	<!-- Post -->
+		<div class="container grid-xl" id="post-link">
+			<div class="post">
+				<div class="row">
+					<div class="column col-12">
+						<div class="post__intro text-center">
+							<h2 class="h2 post__headline">Tokyo Fishmarket</h2>
+							<h3 class="h3"><small class="label label-primary">Design and Photography</small></h3>
+						</div><!-- /post__intro -->
+					</div>
+					<div class="column col-md-12 col-xl-10 col-8 col-mx-auto">
+						<div class="box">
+							<figure>
+								<h6 class="text-left">Forest</h6>
+								<div class="box__shadow">
+									<img src="src/assets/img/tokyo/fish/IMG_0741.jpg" class="box__image img-responsive" alt="Work image">
+								</div>
+								<figcaption class="figure-caption text-right">A picture by <a href="https://unsplash.com/photos/RxKR_1acucY" target="_blank">unsplash</a></figcaption>
+							</figure>
+					 </div>
+					</div>
+					<div class="column col-md-8 col-4 col-mx-auto">
+						<div class="post__content">
+							<h3>Maecenas scelerisque eros id et iaculis neque</h3>
+							<p>Donec a tortor sit amet sapien posuere sodales. Maecenas scelerisque eros id ex malesuada, et iaculis neque varius. Ut ut tristique lacus, eget vestibulum sem. Suspendisse interdum libero eleifend ultricies fringilla. Duis suscipit vel dolor a bibendum. Donec lacinia lectus nec aliquam iaculis. Praesent a ligula diam.</p>
+							<div class="text-left">
+								<h4>Categorie: <small class="label label-primary"> Design and Photography</small></h4>
+							</div>
+							<div class="text-left">
+								<h4>Theme: <small class="label label-primary"> Travelling</small></h4>
+							</div>
+							<div class="text-left">
+								<h4>Year: <small class="label label-primary"> 2018</small></h4>
+							</div>
+						</div><!-- /post__content -->
+					</div>
+					<div class="column col-md-10 col-xl-10 col-ml-auto">
+						<div class="box">
+							<figure>
+								<h6 class="text-left">car</h6>
+								<div class="box__shadow">
+									<img src="src/assets/img/tokyo/fish/IMG_0747.jpg" class="box__image img-responsive" alt="Work image">
+								</div>
+								<figcaption class="figure-caption text-right">A picture by <a href="https://unsplash.com/photos/T3S8mPD39bg" target="_blank">unsplash</a></figcaption>
+							</figure>
+						</div>
+					</div>
+					<div class="column col-md-8 col-4 col-mx-auto">
+						<div class="post__content">
+							<p>In fermentum ante non odio pellentesque rutrum. Sed facilisis elit nec rutrum dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer blandit finibus nulla, in suscipit velit auctor et. Maecenas sapien nulla, cursus nec quam eget, luctus ornare sem.</p>
+							<p>Etiam condimentum lectus vestibulum ultrices tempus. Aliquam consequat ipsum ligula, eget auctor sem lacinia at. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+						</div><!-- /post__content -->
+					</div>
+					<div class="column col-md-9 col-6 col-mr-auto">
+						<div class="box">
+							<figure>
+								<h6 class="text-left">Shoes</h6>
+								<div class="box__shadow">
+									<img src="src/assets/img/tokyo/fish/IMG_0756.jpg" class="box__image img-responsive" alt="Work image">
+								</div>
+								<figcaption class="figure-caption text-left">A picture by <a href="https://unsplash.com/photos/4HOWAurtyM4" target="_blank">unsplash</a></figcaption>
+							</figure>
+						</div>
+					</div>
+					<div class="column col-md-8 col-6 col-mx-auto">
+						<div class="post__content">
+							<p>In fermentum ante non odio pellentesque rutrum. Sed facilisis elit nec rutrum dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer blandit finibus nulla, in suscipit velit auctor et. Maecenas sapien nulla, cursus nec quam eget, luctus ornare sem.</p>
+							<p>Etiam condimentum lectus vestibulum ultrices tempus. Aliquam consequat ipsum ligula, eget auctor sem lacinia at. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+						</div><!-- /post__content -->
+					</div>
+					<div class="column large-10 ">
+						<div class="post__content">
+							<h2><small class="label label-primary">Maecenas scelerisque eros id et iaculis neque</small></h2>
+							<p>Etiam condimentum lectus vestibulum ultrices tempus. Aliquam consequat ipsum ligula, eget auctor sem lacinia at. Interdum et malesuada fames ac anteIn fermentum ante non odio pellentesque rutrum. Sed facilisis elit nec rutrum dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer blandit finibus nulla, in suscipit velit auctor et. Maecenas sapien nulla, cursus nec quam eget, luctus ornar</p>
+						</div><!-- /post__content -->
+					</div>
+					<div class="column large-12">
+						<div class="box spacing-huge">
+							<div class="box">
+								<figure>
+									<h6 class="text-left">Forest 2</h6>
+									<div class="box__shadow">
+										<img src="src/assets/img/tokyo/fish//Markus_morley_tokyo_day_005-6227.jpg" class="box__image img-responsive" alt="Work image">
+									</div>
+									<figcaption class="figure-caption text-right">A picture by <a href="https://unsplash.com/photos/CdbNtePkCSE" target="_blank">unsplash</a></figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div><!-- end row -->
+			</div><!-- end .post -->
+		</div><!-- end container -->
+
+<main class="full-width-site-container">
+
+  <nav class="subnav">
+    <label for="services-nav-select">Jump To: </label>
+    <select id="services-nav-select">
+      <option value="#major-providers">Major Providers</option>
+      <option value="#static-hosting">Static Hosting</option>
+      <option value="#web-forms">Forms</option>
+      <option value="#payments">Payments</option>
+      <option value="#media-storage">Media Storage</option>
+      <option value="#email-sms">Email, SMS, & Notifications</option>
+      <option value="#cms">CMS's & Data Storage</option>
+      <option value="#real-time">Real Time</option>
+      <option value="#auth">Auth</option>
+      <option value="#monitoring">Monitoring</option>
+    </select>
+  </nav>
+
+  <header class="section-header" id="major-providers">
+    <h2>
+      The Major Providers
+    </h2>
+    <p>Need to calculate costs? Try the <a href="http://serverlesscalc.com/">Serverless Cost Calculator</a>.</p>
+  </header>
+
+  <div class="card-grid">
+    {% include "./portfolio-categories/auth.njk" %}
+  </div>
+
+
+
+</main>
+
+{% endblock %}
