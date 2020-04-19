@@ -1,0 +1,18 @@
+{% set body_class = "home" %}
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<main class="centered-text-column what-column">
+
+  {% include "./content/about.html" %}
+
+  <p>Prefer to hear a couple of people explain it over video screencast? Here's David Wells and I:</p>
+
+  <div style="--aspect-ratio:16/9;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2N_sUmpjzZk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+</main>
+
+{% endblock %}

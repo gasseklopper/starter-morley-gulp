@@ -1,8 +1,11 @@
-// Core variables
+// Core variables version
 $version: "0.0.1";
 
-// Core features
+// direction
 $rtl: false !default;
+
+// dark-theme
+$dark-theme: false !default;
 
 // Core colors
 // Core colors
@@ -101,6 +104,17 @@ $control-width-lg: 960px !default;
 $control-width-xl: 1280px !default;
 
 // Responsive breakpoints
+$grid__columns: 12 !default;
+$layout-sizes: (
+	'xs': 480px,
+	'sm': 600px,
+	'md': 840px,
+	'lg': 960px,
+	'xl': 1280px,
+	'2x': 1440px
+) !default;
+
+// responsiv sizes
 $size-xs: 480px !default;
 $size-sm: 600px !default;
 $size-md: 840px !default;

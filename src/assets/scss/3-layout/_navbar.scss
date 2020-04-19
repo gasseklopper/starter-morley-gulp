@@ -26,6 +26,7 @@
     text-decoration: none;
   }
 }
+
 // Navbar
 .navbar {
 	background-color: $dark-color;
@@ -69,37 +70,44 @@
 		}
 	}
 }
+
 .mobile-menu {
-	display: block;
+	position: fixed;
+	// display: block;
 	width: 100%;
 	line-height: 1.6em;
 	font-weight: 400;
-	text-align: center;
-	margin: 0 auto;
+	// text-align: center;
+	// margin: 0 auto;
+	// z-index: 100;
 
 	ul {
 		list-style-type: none;
 		margin: 0 auto;
-		padding-left: 0;
-		text-align: center;
+		padding-left: 10%;
+		// text-align: center;
 		width: 100%;
 		background: $dark-color;
 	}
 
- li {
-		display: inline-block;
-	}
+	li {
+			display: inline-block;
+		}
 
 	li a {
 		display: block;
-		min-width: 100px;
+		// min-width: 100px;
 		text-align: center;
 		color: $secondary-color;
 		background: $dark-color;
 		text-decoration: none;
 		margin-left: -5px;
-		padding: 10px 0;
+		padding: 10px;
 		transition: all 0.4s ease 0s;
+	}
+
+	li a.active {
+		background-color: red;
 	}
 
 	li:hover a {

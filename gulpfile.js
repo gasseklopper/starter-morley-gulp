@@ -128,7 +128,7 @@ function serveTask(done) {
 const watch_nunjucks = () => watch(paths.nunjucksWatch, series(nunjucksTask, reload))
 const watch_scss	 = () => watch(paths.styleWatch, 	series(scssTask, reload))
 const watch_js 		 = () => watch(paths.jsSRC_folder, 	series(jsTask, reload));
-const watch_images 	 = () => watch('./src/assets/img/**/*.{gif,jpg,png,svg}', 	series(imagesTask, reload));
+const watch_images 	 = () => watch('./src/assets/img/**/*.*', 	series(imagesTask, reload));
 
 // Run default Task 'gulp'
 exports.default = series(
