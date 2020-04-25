@@ -20,6 +20,7 @@
 }
 
 // Responsive breakpoint system
+.hide,
 .xs-show,
 .sm-show,
 .md-show,
@@ -53,21 +54,22 @@
 }
 
 .column {
-  // background-color: red;
   flex: 1;
   max-width: 100%;
   padding-left: $layout-spacing;
   padding-right: $layout-spacing;
-
-  &.col-auto {
-    flex: none;
-  }
 
   @for $i from 1 through $grid__columns {
     &.col-#{ $i } {
 			flex: 0 1 auto;
 			width: percentage(1 / $grid__columns) * $i;
 		}
+    &.hide {
+      display: none !important;
+    }
+    &.show {
+      display: block !important;
+    }
   }
 
   @each $sizeName, $size in $layout-sizes {
