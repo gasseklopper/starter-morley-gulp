@@ -1,111 +1,141 @@
 // Layout
 
 
-
+// container setup
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $layout-spacing;
-  padding-right: $layout-spacing;
-  width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	// padding-left: $layout-spacing;
+	// padding-right: $layout-spacing;
+	width: 100%;
 
-  $grid-spacing: ($layout-spacing / ($layout-spacing * 0 + 1)) * $html-font-size;
+	// a kind of gutter around container to complex dependencies
+	$grid-spacing: ($layout-spacing / ($layout-spacing * 0 + 1)) * $html-font-size;
 
-	@each $sizeName, $size in $layout-sizes {
-    // @include rowClasses($sizeName);
-    &.container-#{ $sizeName } {
-      max-width: $grid-spacing * 2 + $size;
-    }
+	// loop for generating container sizes from variables layout sizes
+	@each $sizeName,
+	$size in $layout-sizes {
+
+		// @include rowClasses($sizeName);
+		&.container-#{ $sizeName } {
+			max-width: $grid-spacing * 2 + $size;
+		}
 	}
 }
 
-// Responsive breakpoint system
+// initial setup for hide/show elements
+//todo:: think about where should u want to use hide/show now its global
 .hide,
 .xs-show,
 .sm-show,
 .md-show,
 .lg-show,
 .xl-show {
-  display: none !important;
+	display: none !important;
 }
 
-// Responsive grid system
+// row setup for grid system
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -$layout-spacing;
-  margin-right: -$layout-spacing;
-  background-color: green;
+	display: flex;
+	flex-wrap: wrap;
+	// negate container padding for full gapless row
+	// margin-left: -$layout-spacing;
+	// margin-right: -$layout-spacing;
+	// padding-left: $layout-spacing;
+	// padding-right: $layout-spacing;
+	// background-color: blue;
 
-  &.col-gapless {
-    margin-left: 0;
-    margin-right: 0;
+	// gapless row an column
+	&.row-gapless {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
 
-    & > .column {
+		&>.column {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  &.col-oneline {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
+	// with row-oneline u can scroll overflow content in row
+	&.row-oneline {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	}
 }
 
-.column {
-  flex: 1;
-  max-width: 100%;
-  padding-left: $layout-spacing;
-  padding-right: $layout-spacing;
 
-  @for $i from 1 through $grid__columns {
-    &.col-#{ $i } {
+// column setup for grid system
+.column {
+	flex: 1;
+	max-width: 100%;
+	// background-color: green
+;
+	padding-left: $layout-spacing;
+	padding-right: $layout-spacing;
+
+	@for $i from 1 through $grid__columns {
+		&.col-#{ $i } {
 			flex: 0 1 auto;
 			width: percentage(1 / $grid__columns) * $i;
 		}
-    &.hide {
-      display: none !important;
-    }
-    &.show {
-      display: block !important;
-    }
-  }
 
-  @each $sizeName, $size in $layout-sizes {
-    @media (min-width: $size) {
-      @for $i from 1 through $grid__columns {
-        &.#{ $sizeName }-col-#{ $i } {
-          background-color: white;
-          flex: 0 1 auto;
-          width: percentage(1 / $grid__columns) * $i;
-        }
-        &.#{ $sizeName }-hide {
-          display: none !important;
-        }
-        &.#{ $sizeName }-show {
-          display: block !important;
-        }
-      }
-    }
-  }
+		&.hide {
+			display: none !important;
+		}
 
-  &.col-auto {
-    flex: 0 0 auto;
-    max-width: none;
-    width: auto;
-  }
+		&.show {
+			display: block !important;
+		}
+	}
 
-  &.col-mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
+	@each $sizeName,$size in $layout-sizes {
+		@media (min-width: $size) {
+			@for $i from 1 through $grid__columns {
+				&.col-#{ $i } {
+					// background-color: white;
+					flex: 0 1 auto;
+					width: percentage(1 / $grid__columns) * $i;
+				}
 
-  &.col-ml-auto {
-    margin-left: auto;
-  }
+				&.#{ $sizeName }-col-#{ $i } {
+					// background-color: white;
+					flex: 0 1 auto;
+					width: percentage(1 / $grid__columns) * $i;
+				}
 
-  &.col-mr-auto {
-    margin-right: auto;
-  }
+				&.#{ $sizeName }-hide {
+					display: none !important;
+				}
+
+				&.#{ $sizeName }-show {
+					display: block !important;
+				}
+			}
+		}
+	}
+
+	// column
+	&.col-auto {
+		flex: 0 0 auto;
+		max-width: none;
+		width: auto;
+	}
+
+	// column
+	&.col-mx-auto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	// column
+	&.col-ml-auto {
+		margin-left: auto;
+	}
+
+	// column
+	&.col-mr-auto {
+		margin-right: auto;
+	}
 }

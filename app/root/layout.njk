@@ -10,19 +10,24 @@
 
 </head>
 <body>
-  <div class="container container-xl">
-    {# {% include "./template-parts/header.njk" %} #}
-    {# {% include "./template-parts/nav.njk" %} #}
+      <div data-barba="wrapper">
+      <div data-barba="container" data-barba-namespace="page-a">
+        <h1>Home</h1>
+          <div class="container container-xl">
+    <!-- {% include "./template-parts/header.njk" %} -->
+    {% include "./template-parts/nav.njk" %}
   </div>
 
     {% block content %}
     {% endblock %}
+      </div>
+    </div>
+
 
   <div class="container container-lg">
     {% include "./template-parts/footer.njk" %}
   </div>
 
   <script src="../../../src/assets/js/script.min.js"></script>
-  {# <script src="../../../src/assets/js/libs/anime.js"></script> #}
 </body>
 </html>

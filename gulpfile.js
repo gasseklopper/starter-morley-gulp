@@ -70,7 +70,7 @@ function jsTask(done){
 					presets: ['env'],
 					sourceMaps: true,
 					global: true,
-					ignore: /\/node_modules/
+					// ignore: /\/node_modules/
 				})
 			.bundle()
 			.pipe( source( entry ))

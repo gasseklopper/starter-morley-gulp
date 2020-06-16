@@ -103,10 +103,12 @@ $control-width-md: 640px !default;
 $control-width-lg: 960px !default;
 $control-width-xl: 1280px !default;
 
+
 // Responsive breakpoints
 $grid__columns: 12 !default;
 
 $layout-sizes: (
+	'default': 1280px,
 	'xs': 480px,
 	'sm': 600px,
 	'md': 840px,
