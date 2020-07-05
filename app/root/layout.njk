@@ -3,29 +3,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Markus Morley</title>
   <link rel="stylesheet" href="src/assets/css/spectre.min.css">
   <link rel="stylesheet" href="src/assets/css/spectre-exp.min.css">
   <link rel="stylesheet" href="src/assets/css/spectre-icons.css">
 
 </head>
-<body>
-      <div data-barba="wrapper">
-      <div data-barba="container" data-barba-namespace="page-a">
-        <h1>Home</h1>
-          <div class="container container-xl">
-    <!-- {% include "./template-parts/header.njk" %} -->
-    {% include "./template-parts/nav.njk" %}
-  </div>
+<body class="{{ body_class }}">
+{% include "./template-parts/nav.njk" %}
+  <div data-barba="wrapper">
+    <!-- put here content that will not change
+     between your pages, like <header> or <nav> -->
+    <div data-barba="container" data-barba-namespace="page-a">
+     <!-- put here the content you wish to change
+     between your pages, like your main content <h1> or <p> -->
+      <div class="{{ site_class }}">
+        <div class="container container-xl">
+        <!-- {% include "./template-parts/header.njk" %} -->
 
-    {% block content %}
-    {% endblock %}
+        </div>
+
+          {% block content %}
+          {% endblock %}
+
+        <div class="container container-lg">
+          {% include "./template-parts/footer.njk" %}
+        </div>
       </div>
     </div>
-
-
-  <div class="container container-lg">
-    {% include "./template-parts/footer.njk" %}
+    <!-- put here content that will not change
+  between your pages, like <footer> -->
   </div>
 
   <script src="../../../src/assets/js/script.min.js"></script>
