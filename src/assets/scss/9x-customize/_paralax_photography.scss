@@ -15,7 +15,7 @@ height: 41000px;
     // pointer-events: none;
     position: fixed;
     width: 1200px;
-    top: 0;
+    top: 300;
     left: 50%;
     margin-left: -600px;
     z-index: 2;
@@ -38,19 +38,41 @@ height: 41000px;
     display: block;
     overflow: hidden;
   }
+
   #bg-3-1 {
-    pointer-events: none;
-    // background: url("../img/paralax/blink_1.png");
-    background: url("../img/photography/black/Black_001.jpg");
+    // pointer-events: none;
+    background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 629px;
     height: 757px;
-    top: 100px;
+    top: 800px;
+    transition: all 1s ease-out;
+    &:hover{
+      transform: scale(1.4);
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
+      z-index: 400;
+    }
+
+    a {
+      display: flex;
+      height: 100%;
+      color: white;
+      transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+      &:hover{
+        font-size: 8em;
+        color: black;
+        background-color: yellow ;
+        opacity: 1;
+      }
+    }
   }
+
   #bg-3-2 {
     pointer-events: none;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon2.png");
     // background: url("../img/paralax_about/pyramidpsd.png");
-    background: url("../img/photography/black/Black_002.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 803px;
     height: 583px;
     top: 1050px;
@@ -59,18 +81,38 @@ height: 41000px;
   #bg-3-3 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon3.png");
       // background: url("../img/paralax_about/markus_tag.png");
-      background: url("../img/photography/black/Black_003.jpg");
+      background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 546px;
     height: 713px;
     top: 1800px;
     right: 140px;
+    transition: all 1s ease-out;
+    &:hover{
+      transform: scale(1.4);
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
+      z-index: 400;
+    }
+    a {
+      display: flex;
+      height: 100%;
+      color: white;
+      transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+      &:hover{
+        font-size: 8em;
+        color: black;
+        background-color: yellow ;
+        opacity: 1;
+      }
+    }
   }
   #bg-3-4 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/ground.png");
     // background: url("../img/paralax/blink_1.png");
     // background: url("../img/paralax_about/metal_slug_002.png");
-    // background: url("../img/photography/black/Black_004.jpg");
-    background: url("../img/photography/black/agifcolossalsphere2.gif");
+    // background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_001salsphere2.gif");
     width: 804px;
     height: 484px;
     top: 2800px;
@@ -78,31 +120,44 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
   #bg-3-5 {
     // pointer-events: none;
     // background: url("../img/paralax/blink_1.png");
-    background: url("../img/photography/black/Black_001.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 629px;
     height: 757px;
     top: 2100px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
+    }
+    a {
+      display: flex;
+      height: 100%;
+      color: white;
+      transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+      &:hover{
+        font-size: 8em;
+        color: black;
+        background-color: yellow ;
+        opacity: 1;
+      }
     }
   }
   #bg-3-6 {
     // pointer-events: none;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon2.png");
     // background: url("../img/paralax_about/pyramidpsd.png");
-    background: url("../img/photography/black/Black_002.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 803px;
     height: 583px;
     top: 3050px;
@@ -110,15 +165,15 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
   #bg-3-7 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon3.png");
       // background: url("../img/paralax_about/markus_tag.png");
-      background: url("../img/photography/black/Black_003.jpg");
+      background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 546px;
     height: 713px;
     top: 4800px;
@@ -126,8 +181,8 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
@@ -135,25 +190,38 @@ height: 41000px;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/ground.png");
     // background: url("../img/paralax/blink_1.png");
     // background: url("../img/paralax_about/metal_slug_002.png");
-    // background: url("../img/photography/black/Black_004.jpg");
-    background: url("../img/photography/black/agifcolossalsphere2.gif");
-    width: 1104px;
+    // background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
+    width: 804px;
     height: 684px;
     top: 5800px;
-    right: 300px;
+    right: 30px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
+    }
+    a {
+      display: flex;
+      height: 100%;
+      color: white;
+      transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+      &:hover{
+        font-size: 8em;
+        color: black;
+        background-color: yellow ;
+        opacity: 1;
+      }
     }
   }
   /* middle layer clouds */
   #parallax-bg-2 div {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg1.png");
     // background: url("../img/paralax/cloud_small_2.png");
-    // background: url("../img/photography/black/Black_005.jpg");
+    // background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     background-repeat: no-repeat;
     position: absolute;
     display: block;
@@ -163,90 +231,90 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
 
   #bg-2-1 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_006.jpg");
     top: 100px;
     left: -310px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
   #bg-2-2 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_007.jpg");
     top: 270px;
     right: -70px;
   }
   #bg-2-3 {
-    background: url("../img/photography/black/Black_015.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_011.jpg");
     top: 870px;
     left: -300px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
   #bg-2-4 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_016.jpg");
     top: 1120px;
     right: -130px;
   }
   #bg-2-5 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_002.jpg");
     top: 1620px;
     left: 140px;
   }
   #bg-2-6 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_004.jpg");
     top: 720px;
     left: 340px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      border-bottom: 4px solid black ;
+      border-right: 14px solid black ;
       z-index: 400;
     }
   }
   #bg-2-7 {
-    background: url("../img/photography/black/Black_022.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_008.jpg");
     top: 3100px;
     left: -310px;
   }
   #bg-2-8 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_006.jpg");
     top: 3270px;
     right: -70px;
   }
   #bg-2-9 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_005.jpg");
     top: 3870px;
     left: -300px;
   }
   #bg-2-10 {
-    background: url("../img/photography/black/Black_025.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_003.jpg");
     top: 4120px;
     right: -130px;
   }
   #bg-2-11 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_010.jpg");
     top: 4620px;
     left: 140px;
   }
   #bg-2-12 {
-    background: url("../img/photography/black/Black_021.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_011.jpg");
     top: 4720px;
     left: 340px;
   }
@@ -263,7 +331,7 @@ height: 41000px;
 
   #bg-1-1 {
     // background: url("../img/paralax_about/morley_portrait-tags-tag.png");
-    background: url("../img/photography/black/Black_006.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_009.jpg");
     width: 800px;
     top: 600px;
     left: 15px;
@@ -271,20 +339,20 @@ height: 41000px;
   #bg-1-2 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_2.png");
-    background: url("../img/photography/black/Black_007.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_008.jpg");
     top: 420px;
     left: 0px;
   }
   #bg-1-3 {
     // background: url("../img/paralax/cloud_small_1.png");
-    background: url("../img/photography/black/Black_008.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_007.jpg");
     top: 850px;
     right: -290px;
   }
   #bg-1-4 {
     // background: url("../img/paralax/Unbenannt-2-small.png");
     // background: url("../img/paralax_about/perspective.png");
-    background: url("../img/photography/black/Black_009.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_006.jpg");
     top: 1350px;
     width: 803px;
     height: 583px;
@@ -294,7 +362,7 @@ height: 41000px;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
-    background: url("../img/photography/black/Black_010.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_005.jpg");
     width: 1403px;
     height: 583px;
     top: 1200px;
@@ -304,7 +372,7 @@ height: 41000px;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
-    background: url("../img/photography/black/Black_011.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_004.jpg");
     width: 1403px;
     height: 583px;
     top: 1700px;
@@ -314,7 +382,7 @@ height: 41000px;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
-    background: url("../img/photography/black/Black_012.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_003.jpg");
     width: 1403px;
     height: 583px;
     top: 2000px;
@@ -324,7 +392,7 @@ height: 41000px;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
-    background: url("../img/photography/black/Black_013.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_002.jpg");
     width: 1403px;
     height: 583px;
     top: 1200px;
@@ -334,7 +402,7 @@ height: 41000px;
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
-    background: url("../img/photography/black/Black_014.jpg");
+    background: url("../img/photography/blacker/photography_blackerthandays_001.jpg");
     width: 1403px;
     height: 583px;
     top: 2900px;

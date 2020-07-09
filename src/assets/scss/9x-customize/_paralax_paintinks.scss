@@ -280,46 +280,11 @@ height: 41000px;
 
 }
 
-:root {
-    --dark: #242423;
-}
-
-html {
-	box-sizing: border-box;
-    // scroll-behavior: smooth;
-    // scroll-snap-type: y mandatory;
-}
-
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-html, body {
-	min-height: 100vh;
-}
-
-body {
-    background-color: white;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
-    color: var(--dark);
-    line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // overflow: hidden;
-}
-
-.logo,
-h1,
-h2 {
+.logo {
     margin: 0;
     line-height: 1;
     font-family: 'Cinzel', serif;
     font-weight: 400;
-}
-
-p {
-    margin: 0;
 }
 
 .stage {
