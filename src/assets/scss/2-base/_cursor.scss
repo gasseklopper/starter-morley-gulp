@@ -1,0 +1,51 @@
+// .cursor {
+// 	display: none;
+// }
+
+// @media (any-pointer: fine) {
+// 	.cursor {
+// 		position: fixed;
+// 		top: 0;
+// 		left: 0;
+// 		display: block;
+// 		pointer-events: none;
+// 		z-index: 400;
+// 	}
+// 	.cursor__inner {
+// 		fill: var(--cursor-fill);
+// 		stroke: var(--cursor-stroke);
+// 		stroke-width: var(--cursor-stroke-width);
+// 		opacity: 0.7;
+// 		z-index: 400;
+// 	}
+// 	.credits {
+// 		padding-left: 25vw;
+// 	}
+// }
+
+
+
+.cursor {
+	display: none;
+}
+
+
+@media (any-pointer: fine) {
+	.cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: block;
+		pointer-events: none;
+		opacity: 0;
+		// background-blend-mode: screen;
+		mix-blend-mode: screen;
+		z-index: 400;
+	}
+	.cursor__inner {
+		fill: black;
+		opacity: 1;
+		stroke: #ddd;
+		stroke-width:2px;
+	}
+}
