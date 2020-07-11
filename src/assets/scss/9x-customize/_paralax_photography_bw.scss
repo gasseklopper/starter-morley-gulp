@@ -41,8 +41,9 @@ height: 41000px;
   #bg-3-1 {
     pointer-events: none;
     // background: url("../img/paralax/blink_1.png");
-    background: url("../img/photography/black/Black_001.jpg");
-    width: 629px;
+    // background: url("../img/photography/black/Black_001.jpg");
+    background: url("../img/photography/black/Template_index_018.jpg");
+    width: 829px;
     height: 757px;
     top: 100px;
   }
@@ -59,11 +60,11 @@ height: 41000px;
   #bg-3-3 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon3.png");
       // background: url("../img/paralax_about/markus_tag.png");
-      background: url("../img/photography/black/Black_003.jpg");
-    width: 546px;
+      background: url("../img/photography/black/Template_index_019.jpg");
+    width: 946px;
     height: 713px;
-    top: 1800px;
-    right: 140px;
+    top: 2200px;
+    right: 40px;
   }
   #bg-3-4 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/ground.png");
@@ -73,28 +74,25 @@ height: 41000px;
     background: url("../img/photography/black/agifcolossalsphere2.gif");
     width: 804px;
     height: 484px;
-    top: 2800px;
+    top: 4400px;
     right: 300px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
   #bg-3-5 {
     // pointer-events: none;
     // background: url("../img/paralax/blink_1.png");
-    background: url("../img/photography/black/Black_001.jpg");
+    background: url("../img/photography/black/Black_022.jpg");
     width: 629px;
     height: 757px;
-    top: 2100px;
+    top: 1600px;
     transition: all 1s ease-out;
+    transform: scale(.5);
     &:hover{
-      transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
+      transform: scale(.9);
       z-index: 400;
     }
   }
@@ -110,8 +108,6 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
@@ -121,13 +117,11 @@ height: 41000px;
       background: url("../img/photography/black/Black_003.jpg");
     width: 546px;
     height: 713px;
-    top: 4800px;
+    top: 3800px;
     right: 140px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
@@ -137,15 +131,13 @@ height: 41000px;
     // background: url("../img/paralax_about/metal_slug_002.png");
     // background: url("../img/photography/black/Black_004.jpg");
     background: url("../img/photography/black/agifcolossalsphere2.gif");
-    width: 1104px;
-    height: 684px;
+    width: 604px;
+    height: 484px;
     top: 5800px;
     right: 300px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
@@ -157,35 +149,37 @@ height: 41000px;
     background-repeat: no-repeat;
     position: absolute;
     display: block;
-    width: 488px;
-    height: 238px;
+    // width: 488px;
+    // height: 238px;
     overflow: hidden;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
 
   #bg-2-1 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/black/Black_009.jpg");
+    width: 488px;
+    height: 238px;
     top: 100px;
     left: -310px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
+
   #bg-2-2 {
-    background: url("../img/photography/black/Black_005.jpg");
+    background: url("../img/photography/black/Black_020.jpg");
+    width: 488px;
+    height: 638px;
     top: 270px;
     right: -70px;
   }
+
   #bg-2-3 {
     background: url("../img/photography/black/Black_015.jpg");
     top: 870px;
@@ -193,8 +187,6 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
@@ -215,8 +207,6 @@ height: 41000px;
     transition: all 1s ease-out;
     &:hover{
       transform: scale(1.4);
-      border-bottom: 4px solid yellow ;
-      border-right: 14px solid yellow ;
       z-index: 400;
     }
   }
@@ -242,8 +232,8 @@ height: 41000px;
   }
   #bg-2-11 {
     background: url("../img/photography/black/Black_005.jpg");
-    top: 4620px;
-    left: 140px;
+    top: 20px;
+    left: 240px;
   }
   #bg-2-12 {
     background: url("../img/photography/black/Black_021.jpg");
@@ -263,23 +253,24 @@ height: 41000px;
 
   #bg-1-1 {
     // background: url("../img/paralax_about/morley_portrait-tags-tag.png");
-    background: url("../img/photography/black/Black_006.jpg");
-    width: 800px;
-    top: 600px;
+    background: url("../img/photography/black/Black_017.jpg");
+    width: 600px;
+    height: 900px;
+    top: 100px;
     left: 15px;
   }
   #bg-1-2 {
     // background: url("http://schulzmarcel.de/x/drafts/parallax/img/cloud-lg2.png");
     // background: url("../img/paralax/cloud_small_2.png");
     background: url("../img/photography/black/Black_007.jpg");
-    top: 420px;
+    top: 830px;
     left: 0px;
   }
   #bg-1-3 {
     // background: url("../img/paralax/cloud_small_1.png");
     background: url("../img/photography/black/Black_008.jpg");
-    top: 850px;
-    right: -290px;
+    top: 250px;
+    right: 120px;
   }
   #bg-1-4 {
     // background: url("../img/paralax/Unbenannt-2-small.png");
@@ -315,7 +306,7 @@ height: 41000px;
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
     background: url("../img/photography/black/Black_012.jpg");
-    width: 1403px;
+    width: 403px;
     height: 583px;
     top: 2000px;
     left: 200px;
@@ -325,7 +316,7 @@ height: 41000px;
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
     background: url("../img/photography/black/Black_013.jpg");
-    width: 1403px;
+    width: 403px;
     height: 583px;
     top: 1200px;
     left: -200px;
@@ -335,9 +326,9 @@ height: 41000px;
     // background: url("../img/paralax/cloud_small_1.png");
     // background: url("../img/paralax/abold_1.png");
     background: url("../img/photography/black/Black_014.jpg");
-    width: 1403px;
-    height: 583px;
-    top: 2900px;
-    right: -200px;
+    width: 403px;
+    height: 283px;
+    top: 2300px;
+    right: 200px;
   }
 }
