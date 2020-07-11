@@ -1,15 +1,11 @@
-// import App from './modules/app.js'
-// import Nav from './modules/nav.js'
 import Paralax from './modules/paralax.js'
 import Paintinks from './modules/paralax_paintings.js'
-// import Cursor from './modules/cursor.js'
-import Cursor from './modules/cursor3';
-import barba from '@barba/core';
-import { gsap } from "gsap";
-// import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger, MorphSVGPlugin);
+import Cursor from './modules/cursor3';
+
+import { gsap } from "gsap";
+
+
 var navigation = gsap.timeline({paused:true, reversed:true});
 navigation.to("#navigationWrap", 0.5, {opacity: 1, display: 'block'})
           .to(".navbar", 0.3, {opacity: 0}, "-=0.1")
@@ -38,8 +34,6 @@ const cursor = new Cursor(document.querySelector('.cursor'));
     el.addEventListener('mouseenter', () => cursor.emit('enter'));
     el.addEventListener('mouseleave', () => cursor.emit('leave'));
 });
-// const app = new App()
-// const nav = new Nav()
+
 const paralax = new Paralax()
-// const cursor = new Cursor(document.querySelector('.cursor'));
 const paintinks = new Paintinks()

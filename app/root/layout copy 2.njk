@@ -11,12 +11,6 @@
 </head>
 <body class="{{ body_class }}">
 
-  <div data-barba="wrapper">
-    <!-- put here content that will not change
-     between your pages, like <header> or <nav> -->
-    <div data-barba="container" data-barba-namespace="page-a">
-     <!-- put here the content you wish to change
-     between your pages, like your main content <h1> or <p> -->
        {% include "./template-parts/nav.njk" %}
       <div class="{{ site_class }}">
         <div class="container container-xl">
@@ -31,10 +25,7 @@
           {% include "./template-parts/footer.njk" %}
         </div>
       </div>
-    </div>
-    <!-- put here content that will not change
-  between your pages, like <footer> -->
-  </div>
+
 		<svg class="cursor" width="280" height="280" viewBox="0 0 280 280">
 			<defs>
 				<filter id="filter-1" x="-50%" y="-50%" width="200%" height="200%"
