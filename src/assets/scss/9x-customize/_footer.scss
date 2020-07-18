@@ -1,16 +1,16 @@
 .footer {
-  height: 100%;
-  padding: 80px 0 0;
+	height: 100%;
+	padding: 80px 0 0;
 
-  &__sub_links {
-    display: flex;
-  }
+	&__sub_links {
+		display: flex;
+	}
 
-  &__sub_link {
-    padding-right: 25px;
-  }
+	&__sub_link {
+		padding-right: 25px;
+	}
 
-  #copyright {
-    padding: 40px 0 0;
-  }
+	#copyright {
+		padding: 40px 0 0;
+	}
 }

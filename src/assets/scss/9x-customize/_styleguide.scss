@@ -1,6 +1,5 @@
-
 .styleguide {
-	&__reset{
+	&__reset {
 		padding: 1em 0 3em;
 		h1 {
 			padding: 0;
@@ -35,17 +34,15 @@
 		padding: 3em 0 1em;
 		h2 {
 			padding: 0;
-			margin: .21em 0 .21em;
+			margin: 0.21em 0 0.21em;
 		}
 	}
 
-
 	&__colors {
 		h2 {
-			padding: .3em;
-			margin: .21em 0 1em;
-			@media (min-width: 300px) and (max-width: 600px)
-			{
+			padding: 0.3em;
+			margin: 0.21em 0 1em;
+			@media (min-width: 300px) and (max-width: 600px) {
 				margin: 1.21em 0 1em;
 			}
 		}

@@ -1,39 +1,37 @@
 import Paralax from './modules/paralax.js'
 import Paintinks from './modules/paralax_paintings.js'
 
-import Cursor from './modules/cursor3';
+import Cursor from './modules/cursor3'
 
-import { gsap } from "gsap";
+import { gsap } from 'gsap'
 
-
-var navigation = gsap.timeline({paused:true, reversed:true});
-navigation.to("#navigationWrap", 0.5, {opacity: 1, display: 'block'})
-          .to(".navbar", 0.3, {opacity: 0}, "-=0.1")
-          .to(".close", 0.3, {display: "block", opacity: 1}, "-=0.1")
-          .from(".menu", 0.5, {opacity: 0, y: 30})
+var navigation = gsap.timeline({ paused: true, reversed: true })
+navigation
+	.to('#navigationWrap', 0.5, { opacity: 1, display: 'block' })
+	.to('.navbar', 0.3, { opacity: 0 }, '-=0.1')
+	.to('.close', 0.3, { display: 'block', opacity: 1 }, '-=0.1')
+	.from('.menu', 0.5, { opacity: 0, y: 30 })
 var menu = document.querySelector('.navbar')
 var close = document.querySelector('.close')
 
-menu.onclick  = () => {
-console.log('navbar', menu)
-navigation.reversed() ? navigation.play() : navigation.reverse();
+menu.onclick = () => {
+	console.log('navbar', menu)
+	navigation.reversed() ? navigation.play() : navigation.reverse()
 }
-close.onclick  = () => {
-console.log('navbar close', menu)
-navigation.reversed() ? navigation.play() : navigation.reverse();
+close.onclick = () => {
+	console.log('navbar close', menu)
+	navigation.reversed() ? navigation.play() : navigation.reverse()
 }
 // $(".navbar, .close").click (function() {
 //   navigation.reversed() ? navigation.play() : navigation.reverse();
 // })
 
+const cursor = new Cursor(document.querySelector('.cursor'))
 
-
-const cursor = new Cursor(document.querySelector('.cursor'));
-
-[...document.querySelectorAll('a')].forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.emit('enter'));
-    el.addEventListener('mouseleave', () => cursor.emit('leave'));
-});
+;[...document.querySelectorAll('a')].forEach((el) => {
+	el.addEventListener('mouseenter', () => cursor.emit('enter'))
+	el.addEventListener('mouseleave', () => cursor.emit('leave'))
+})
 
 const paralax = new Paralax()
 const paintinks = new Paintinks()

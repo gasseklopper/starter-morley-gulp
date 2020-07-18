@@ -23,12 +23,9 @@
 // 	}
 // }
 
-
-
 .cursor {
 	display: none;
 }
-
 
 @media (any-pointer: fine) {
 	.cursor {
@@ -46,6 +43,6 @@
 		fill: black;
 		opacity: 1;
 		stroke: #ddd;
-		stroke-width:2px;
+		stroke-width: 2px;
 	}
 }

@@ -27,28 +27,27 @@
 
 // export { map, lerp, clamp, getMousePos, getRandomFloat };
 
-
 // Map number x from range [a, b] to [c, d]
-const map = (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c;
+const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c
 
 // Linear interpolation
-const lerp = (a, b, n) => (1 - n) * a + n * b;
+const lerp = (a, b, n) => (1 - n) * a + n * b
 
 const calcWinsize = () => {
-    return {width: window.innerWidth, height: window.innerHeight};
-};
+	return { width: window.innerWidth, height: window.innerHeight }
+}
 
 // Gets the mouse position
 const getMousePos = (e) => {
-    let posx = 0;
-    let posy = 0;
-    if (!e) e = window.event;
-    if (e.pageX || e.pageY) {
-        posx = e.clientX;
-        posy = e.clientY;
-    }
+	let posx = 0
+	let posy = 0
+	if (!e) e = window.event
+	if (e.pageX || e.pageY) {
+		posx = e.clientX
+		posy = e.clientY
+	}
 
-    return { x : posx, y : posy }
-};
+	return { x: posx, y: posy }
+}
 
-export { map, lerp, calcWinsize, getMousePos };
+export { map, lerp, calcWinsize, getMousePos }

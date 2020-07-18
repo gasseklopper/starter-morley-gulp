@@ -39,7 +39,6 @@ $ gulp jsTask
 
 Compiles js to babelify, browserify js
 
-
 ```
 $ gulp build
 ```

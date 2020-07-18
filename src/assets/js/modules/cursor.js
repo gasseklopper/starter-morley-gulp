@@ -1,43 +1,53 @@
-import { gsap } from 'gsap';
-import { lerp, getMousePos } from '../utils/utils';
+import { gsap } from 'gsap'
+import { lerp, getMousePos } from '../utils/utils'
 
 // Track the mouse position
-let mouse = {x: 0, y: 0};
-window.addEventListener('mousemove', ev => mouse = getMousePos(ev));
+let mouse = { x: 0, y: 0 }
+window.addEventListener('mousemove', (ev) => (mouse = getMousePos(ev)))
 
 export default class Cursor {
-    constructor(el) {
+	constructor(el) {
 		console.log('el', el)
-        this.DOM = {el: el};
-        this.DOM.el.style.opacity = 0;
+		this.DOM = { el: el }
+		this.DOM.el.style.opacity = 0
 		console.log('dom', this.DOM.el)
 
-        this.bounds = this.DOM.el.getBoundingClientRect();
+		this.bounds = this.DOM.el.getBoundingClientRect()
 		// console.log('this.bounds', this.DOM.el.getBoundingClientRect())
-        this.renderedStyles = {
-            tx: {previous: 15, current: 0, amt: 0.2},
-            ty: {previous: 111, current: 0, amt: 0.2}
-        };
+		this.renderedStyles = {
+			tx: { previous: 15, current: 0, amt: 0.2 },
+			ty: { previous: 111, current: 0, amt: 0.2 },
+		}
 
-        this.onMouseMoveEv = () => {
-            this.renderedStyles.tx.previous = this.renderedStyles.tx.current = mouse.x - this.bounds.width/2;
-            this.renderedStyles.ty.previous = this.renderedStyles.ty.previous = mouse.y - this.bounds.height/2;
-            gsap.to(this.DOM.el, {duration: 5.9, ease: 'Power3.easeOut', opacity: 1});
-            requestAnimationFrame(() => this.render());
-            window.removeEventListener('mousemove', this.onMouseMoveEv);
-        };
-        window.addEventListener('mousemove', this.onMouseMoveEv);
-    }
-    render() {
-        this.renderedStyles['tx'].current = mouse.x - this.bounds.width/2;
-        this.renderedStyles['ty'].current = mouse.y - this.bounds.height/2;
+		this.onMouseMoveEv = () => {
+			this.renderedStyles.tx.previous = this.renderedStyles.tx.current =
+				mouse.x - this.bounds.width / 2
+			this.renderedStyles.ty.previous = this.renderedStyles.ty.previous =
+				mouse.y - this.bounds.height / 2
+			gsap.to(this.DOM.el, {
+				duration: 5.9,
+				ease: 'Power3.easeOut',
+				opacity: 1,
+			})
+			requestAnimationFrame(() => this.render())
+			window.removeEventListener('mousemove', this.onMouseMoveEv)
+		}
+		window.addEventListener('mousemove', this.onMouseMoveEv)
+	}
+	render() {
+		this.renderedStyles['tx'].current = mouse.x - this.bounds.width / 2
+		this.renderedStyles['ty'].current = mouse.y - this.bounds.height / 2
 
-        for (const key in this.renderedStyles ) {
-            this.renderedStyles[key].previous = lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].amt);
-        }
+		for (const key in this.renderedStyles) {
+			this.renderedStyles[key].previous = lerp(
+				this.renderedStyles[key].previous,
+				this.renderedStyles[key].current,
+				this.renderedStyles[key].amt
+			)
+		}
 
-        this.DOM.el.style.transform = `translateX(${(this.renderedStyles['tx'].previous)}px) translateY(${this.renderedStyles['ty'].previous}px)`;
+		this.DOM.el.style.transform = `translateX(${this.renderedStyles['tx'].previous}px) translateY(${this.renderedStyles['ty'].previous}px)`
 
-        requestAnimationFrame(() => this.render());
-    }
+		requestAnimationFrame(() => this.render())
+	}
 }

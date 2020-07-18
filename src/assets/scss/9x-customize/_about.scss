@@ -1,5 +1,6 @@
 .about {
-	h1, p {
+	h1,
+	p {
 		padding: 0.4em;
 		// background-color: $dark-color;
 	}
@@ -10,21 +11,20 @@
 	}
 }
 
-
 .docs-block {
-    border-radius: .1rem;
-    padding: .4rem;
+	border-radius: 0.1rem;
+	padding: 0.4rem;
 }
 
 .bg-primary {
-    // background: #5755d9!important;
-    color: #fff;
+	// background: #5755d9!important;
+	color: #fff;
 }
 
 .text-secondary {
-    color: #e5e5f9!important;
+	color: #e5e5f9 !important;
 }
- .docs-demo {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+.docs-demo {
+	padding-bottom: 1rem;
+	padding-top: 1rem;
 }

@@ -1,52 +1,52 @@
 .index_onepager {
-  margin: 50px 0;
+	margin: 50px 0;
 
-  &__skills_wrapper {
-    margin: 200px 0;
+	&__skills_wrapper {
+		margin: 200px 0;
 
-    h3:hover {
-      color: white;
-    }
-  }
+		h3:hover {
+			color: white;
+		}
+	}
 
-  &__hero_text {
-    // background: url('../img/tokyo/Markus_Morley_Tokyo_day_003-3969.jpg');
-    background: url("../img/tokyo/Markus_Morley_Tokyo_day_003-3969.jpg");
-    width: 100%;
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-    height: 800px;
-    // padding: 300px 0;
-    text-align: center;
+	&__hero_text {
+		// background: url('../img/tokyo/Markus_Morley_Tokyo_day_003-3969.jpg');
+		background: url('../img/tokyo/Markus_Morley_Tokyo_day_003-3969.jpg');
+		width: 100%;
+		background-position: center;
+		/* Center the image */
+		background-repeat: no-repeat;
+		/* Do not repeat the image */
+		background-size: cover;
+		/* Resize the background image to cover the entire container */
+		height: 800px;
+		// padding: 300px 0;
+		text-align: center;
 
-    h2 {
-      margin-top: 250px;
-      display: inline-block;
-      padding: 2px 20px;
-      background: #fff;
-      color: #222;
-      font-size: 50px;
-      line-height: 1.42;
-    }
-  }
+		h2 {
+			margin-top: 250px;
+			display: inline-block;
+			padding: 2px 20px;
+			background: #fff;
+			color: #222;
+			font-size: 50px;
+			line-height: 1.42;
+		}
+	}
 
-  &__progress_wrapper {
-    padding: 50px 0;
-  }
+	&__progress_wrapper {
+		padding: 50px 0;
+	}
 
-  &__progress_charts {
-    padding: 20px 0;
+	&__progress_charts {
+		padding: 20px 0;
 
-    .heading:hover {
-      color: #fff;
-    }
-  }
+		.heading:hover {
+			color: #fff;
+		}
+	}
 
-  &__cta_section {
-    padding: 80px;
-  }
+	&__cta_section {
+		padding: 80px;
+	}
 }

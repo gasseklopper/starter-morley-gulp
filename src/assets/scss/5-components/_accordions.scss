@@ -1,38 +1,38 @@
 // Accordions
 .accordion {
-  input:checked ~,
-  &[open] {
-    & .accordion-header {
-      .icon {
-        transform: rotate(90deg);
-      }
-    }
+	input:checked ~,
+	&[open] {
+		& .accordion-header {
+			.icon {
+				transform: rotate(90deg);
+			}
+		}
 
-    & .accordion-body {
-      max-height: 50rem;
-    }
-  }
+		& .accordion-body {
+			max-height: 50rem;
+		}
+	}
 
-  .accordion-header {
-    display: block;
-    padding: $unit-1 $unit-2;
+	.accordion-header {
+		display: block;
+		padding: $unit-1 $unit-2;
 
-    .icon {
-      transition: transform .25s;
-    }
-  }
+		.icon {
+			transition: transform 0.25s;
+		}
+	}
 
-  .accordion-body {
-    margin-bottom: $layout-spacing;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .25s;
-  }
+	.accordion-body {
+		margin-bottom: $layout-spacing;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.25s;
+	}
 }
 
 // Remove default details marker in Webkit
 summary.accordion-header {
-  &::-webkit-details-marker {
-    display: none;
-  }
+	&::-webkit-details-marker {
+		display: none;
+	}
 }

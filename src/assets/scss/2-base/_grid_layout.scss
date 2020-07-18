@@ -1,6 +1,5 @@
 // Layout
 
-
 // container setup
 .container {
 	margin-left: auto;
@@ -10,12 +9,11 @@
 	width: 100%;
 
 	// a kind of gutter around container to complex dependencies
-	$grid-spacing: ($layout-spacing / ($layout-spacing * 0 + 1)) * $html-font-size;
+	$grid-spacing: ($layout-spacing / ($layout-spacing * 0 + 1)) *
+		$html-font-size;
 
 	// loop for generating container sizes from variables layout sizes
-	@each $sizeName,
-	$size in $layout-sizes {
-
+	@each $sizeName, $size in $layout-sizes {
 		// @include rowClasses($sizeName);
 		&.container-#{ $sizeName } {
 			max-width: $grid-spacing * 2 + $size;
@@ -52,7 +50,7 @@
 		padding-left: 0;
 		padding-right: 0;
 
-		&>.column {
+		& > .column {
 			padding-left: 0;
 			padding-right: 0;
 		}
@@ -65,13 +63,11 @@
 	}
 }
 
-
 // column setup for grid system
 .column {
 	flex: 1;
 	max-width: 100%;
 	// background-color: green
-;
 	padding-left: $layout-spacing;
 	padding-right: $layout-spacing;
 
@@ -90,7 +86,7 @@
 		}
 	}
 
-	@each $sizeName,$size in $layout-sizes {
+	@each $sizeName, $size in $layout-sizes {
 		@media (min-width: $size) {
 			@for $i from 1 through $grid__columns {
 				&.col-#{ $i } {

@@ -1,5 +1,4 @@
 .hero {
-
 	&__headline {
 		margin: 1em 0;
 		h2 {
@@ -13,7 +12,6 @@
 		margin: 0;
 		padding: 0;
 	}
-
 
 	&__image {
 		border-radius: 15px;
@@ -44,9 +42,8 @@
 			border-radius: 15px;
 			height: 300px;
 			width: 200px;
-background-color: $primary-color;
+			background-color: $primary-color;
 			color: white;
-
 		}
 	}
 }
