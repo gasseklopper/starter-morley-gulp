@@ -2,13 +2,14 @@ import { gsap } from 'gsap'
 import { lerp, getMousePos } from '../utils/utils'
 
 // Track the mouse position
+let test
 let mouse = { x: 0, y: 0 }
 window.addEventListener('mousemove', (ev) => (mouse = getMousePos(ev)))
 
 export default class Cursor {
 	constructor(el) {
 		console.log('el', el)
-		this.DOM = { el: el }
+		this.DOM = { el }
 		this.DOM.el.style.opacity = 0
 		console.log('dom', this.DOM.el)
 
@@ -34,9 +35,10 @@ export default class Cursor {
 		}
 		window.addEventListener('mousemove', this.onMouseMoveEv)
 	}
+
 	render() {
-		this.renderedStyles['tx'].current = mouse.x - this.bounds.width / 2
-		this.renderedStyles['ty'].current = mouse.y - this.bounds.height / 2
+		this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2
+		this.renderedStyles.ty.current = mouse.y - this.bounds.height / 2
 
 		for (const key in this.renderedStyles) {
 			this.renderedStyles[key].previous = lerp(
@@ -46,7 +48,7 @@ export default class Cursor {
 			)
 		}
 
-		this.DOM.el.style.transform = `translateX(${this.renderedStyles['tx'].previous}px) translateY(${this.renderedStyles['ty'].previous}px)`
+		this.DOM.el.style.transform = `translateX(${this.renderedStyles.tx.previous}px) translateY(${this.renderedStyles.ty.previous}px)`
 
 		requestAnimationFrame(() => this.render())
 	}

@@ -1,6 +1,6 @@
 import { gsap } from 'gsap'
-import { map, lerp, calcWinsize, getMousePos } from '../utils/utils'
 import { EventEmitter } from 'events'
+import { map, lerp, calcWinsize, getMousePos } from '../utils/utils'
 
 // Calculate the viewport size
 let winsize = calcWinsize()
@@ -15,7 +15,7 @@ window.addEventListener('mousemove', (ev) => (mouse = getMousePos(ev)))
 export default class Cursor extends EventEmitter {
 	constructor(el) {
 		super()
-		this.DOM = { el: el }
+		this.DOM = { el }
 		this.DOM.el.style.opacity = 0
 		this.DOM.circleInner = this.DOM.el.querySelector('.cursor__inner')
 
@@ -53,9 +53,10 @@ export default class Cursor extends EventEmitter {
 		}
 		window.addEventListener('mousemove', this.onMouseMoveEv)
 	}
+
 	render() {
-		this.renderedStyles['tx'].current = mouse.x - this.bounds.width / 2
-		this.renderedStyles['ty'].current = mouse.y - this.bounds.height / 2
+		this.renderedStyles.tx.current = mouse.x - this.bounds.width / 2
+		this.renderedStyles.ty.current = mouse.y - this.bounds.height / 2
 
 		for (const key in this.renderedStyles) {
 			this.renderedStyles[key].previous = lerp(
@@ -65,14 +66,15 @@ export default class Cursor extends EventEmitter {
 			)
 		}
 
-		this.DOM.el.style.transform = `translateX(${this.renderedStyles['tx'].previous}px) translateY(${this.renderedStyles['ty'].previous}px)`
+		this.DOM.el.style.transform = `translateX(${this.renderedStyles.tx.previous}px) translateY(${this.renderedStyles.ty.previous}px)`
 		this.DOM.circleInner.setAttribute(
 			'r',
-			this.renderedStyles['radius'].previous
+			this.renderedStyles.radius.previous
 		)
 
 		requestAnimationFrame(() => this.render())
 	}
+
 	createTimeline() {
 		// init timeline
 		this.tl = gsap
@@ -100,14 +102,17 @@ export default class Cursor extends EventEmitter {
 				scale: 0,
 			})
 	}
+
 	enter() {
-		this.renderedStyles['radius'].current = 120
+		this.renderedStyles.radius.current = 120
 		this.tl.restart()
 	}
+
 	leave() {
-		this.renderedStyles['radius'].current = 50
+		this.renderedStyles.radius.current = 50
 		this.tl.progress(1).kill()
 	}
+
 	listen() {
 		this.on('enter', () => this.enter())
 		this.on('leave', () => this.leave())

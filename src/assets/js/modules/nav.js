@@ -1,8 +1,8 @@
-console.info('Nav initiddafafasdasdlized')
-
 import Headroom from 'headroom.js'
 import Macy from 'macy'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+
+console.info('Nav initiddafafasdasdlized')
 
 class Nav {
 	constructor() {
@@ -106,7 +106,7 @@ class Nav {
 				)
 
 				if (inner == null) return (item.onmouseenter = hideAll)
-				else item.onmouseenter = showItem(item, inner)
+				item.onmouseenter = showItem(item, inner)
 			})
 
 			elem.onmouseleave = hideAll

@@ -3,11 +3,11 @@
 	/* foreground (balloons/landscape)*/
 	#parallax-bg-1 {
 		// pointer-events: none;
-		position: fixed;
-		width: 1200px;
-		top: 300;
 		left: 50%;
 		margin-left: -600px;
+		position: fixed;
+		top: 300;
+		width: 1200px;
 		z-index: 1;
 	}
 	/* background middle layer*/
@@ -57,6 +57,7 @@
 		top: 1050px;
 		left: 70px;
 	}
+
 	#bg-3-3 {
 		// background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon3.png");
 		// background: url("../img/paralax_about/markus_tag.png");
@@ -66,6 +67,7 @@
 		top: 2200px;
 		right: 40px;
 	}
+
 	#bg-3-4 {
 		// background: url("http://schulzmarcel.de/x/drafts/parallax/img/ground.png");
 		// background: url("../img/paralax/blink_1.png");
@@ -77,11 +79,13 @@
 		top: 4400px;
 		right: 300px;
 		transition: all 1s ease-out;
+
 		&:hover {
 			transform: scale(1.4);
 			z-index: 400;
 		}
 	}
+
 	#bg-3-5 {
 		// pointer-events: none;
 		// background: url("../img/paralax/blink_1.png");
@@ -91,11 +95,13 @@
 		top: 1600px;
 		transition: all 1s ease-out;
 		transform: scale(0.5);
+
 		&:hover {
 			transform: scale(0.9);
 			z-index: 400;
 		}
 	}
+
 	#bg-3-6 {
 		// pointer-events: none;
 		// background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon2.png");

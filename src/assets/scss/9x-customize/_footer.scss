@@ -4,6 +4,10 @@
 
 	&__sub_links {
 		display: flex;
+		@media (max-width: $size-sm) {
+			text-align: center;
+			flex-direction: column;
+		}
 	}
 
 	&__sub_link {
@@ -12,5 +16,10 @@
 
 	#copyright {
 		padding: 40px 0 0;
+	}
+
+	.social-share {
+		display: flex;
+		justify-content: space-between;
 	}
 }

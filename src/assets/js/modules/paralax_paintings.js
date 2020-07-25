@@ -9,8 +9,8 @@ console.log('test')
 
 class Paintinks {
 	constructor() {
-		var select = (e) => document.querySelector(e)
-		var selectAll = (e) => document.querySelectorAll(e)
+		const select = (e) => document.querySelector(e)
+		const selectAll = (e) => document.querySelectorAll(e)
 
 		const stage = select('.stage')
 		console.log('test satge', stage)
