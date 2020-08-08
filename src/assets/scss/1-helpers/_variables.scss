@@ -9,7 +9,7 @@ $dark-theme: false !default;
 
 // Core colors
 // Core colors
-$primary-color: #de3350 !default; // comwrap color: fff
+$primary-color: #31a2a0 !default; // comwrap color: fff
 $primary-color-dark: darken($primary-color, 3%) !default;
 $primary-color-light: lighten($primary-color, 40%) !default;
 $secondary-color: #ddd !default; // comwrap color: de3350
@@ -17,6 +17,8 @@ $secondary-color-dark: darken($secondary-color, 3%) !default;
 $secondary-color-light: lighten($secondary-color, 3%) !default;
 
 // Gray colors
+$black-color: #000 !default;
+$white-color: #fff !default;
 $dark-color: #454d5d !default;
 $light-color: #ddd !default;
 $gray-color: lighten($dark-color, 40%) !default;

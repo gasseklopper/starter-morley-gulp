@@ -34,15 +34,18 @@
 
 	.about-us-section {
 		position: relative;
-		margin-bottom: -80px;
+		margin-bottom: -120px;
 		h1 {
 			color: $secondary-color;
 		}
 
 		a {
+			padding: 0 0.2rem;
+			background-color: white;
 			color: $dark-color;
 			&:hover {
-				background-color: white;
+				background-color: black;
+				color: $light-color;
 			}
 		}
 
@@ -53,7 +56,7 @@
 			z-index: 114;
 
 			@media (max-width: 900px) {
-				padding: 3.2rem;
+				padding: 3.2rem 1.2rem;
 			}
 		}
 	}

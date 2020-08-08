@@ -1,0 +1,118 @@
+.footer-dark {
+	margin-top: 8rem;
+	a {
+		color: white;
+		transition: transform 1.3s;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	background-color: $black-color;
+
+	&__hero {
+		position: relative;
+		height: 800px;
+	}
+
+	&__image-001 {
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		z-index: 1;
+		transition: transform 1.3s;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	&__image-002 {
+		position: absolute;
+		height: 600px;
+		width: 500px;
+		top: -10%;
+		left: -10%;
+		z-index: 1;
+		transition: transform 3s;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
+		&::before {
+			content: 'hello world';
+			position: absolute;
+			right: 50%;
+			bottom: -10%;
+		}
+
+		@media (max-width: $size-xl) {
+			top: -10%;
+			left: -10%;
+			width: 400px;
+			height: 400px;
+			&::before {
+				content: 'hello world';
+				position: absolute;
+				right: 50%;
+				bottom: -60%;
+			}
+		}
+
+		@media (max-width: $size-md) {
+			top: -3%;
+			left: -4%;
+			width: 300px;
+			height: 300px;
+			&::before {
+				content: 'hello world';
+				position: absolute;
+				right: 50%;
+				bottom: -60%;
+			}
+		}
+
+		@media (max-width: $size-sm) {
+			top: 60%;
+			left: 10%;
+			width: 200px;
+			height: 200px;
+			&::before {
+				content: 'hello world';
+				position: absolute;
+				right: -50%;
+				bottom: 10%;
+			}
+		}
+	}
+
+	&__navigation {
+		position: relative;
+		padding-top: 15rem;
+		z-index: 14;
+	}
+
+	&__link {
+		text-align: center;
+
+		line-height: 2.8rem;
+		a {
+			font-size: 3rem;
+			color: white;
+			transition: font-size 1.3s;
+
+			&:hover {
+				font-size: 5rem;
+				transform: scale(1.2);
+			}
+		}
+	}
+
+	&__copyright {
+		display: flex;
+		justify-content: space-between;
+		margin: 1.4rem;
+	}
+}

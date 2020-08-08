@@ -1,0 +1,85 @@
+.navigation {
+	.container--nav {
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-right: auto;
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between; // *
+		flex-direction: row; // *
+	}
+	.navbar {
+		width: 100%;
+		position: fixed;
+		z-index: 1000;
+		background-color: $black-color;
+		opacity: 0.8;
+		&__brand {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-weight: bold;
+			color: white;
+			width: 100%;
+			padding: 20px;
+			h2 {
+				margin: 0;
+			}
+			@media (max-width: $size-sm) {
+				h2 {
+					font-size: 1.3rem;
+				}
+			}
+		}
+
+		&__burger {
+			display: none;
+			cursor: pointer;
+			color: $white-color;
+			transition: all 0.3s ease;
+			&:hover {
+				color: white;
+			}
+		}
+
+		&__links {
+			display: flex;
+			align-items: center;
+			position: relative;
+			span {
+				position: relative;
+				margin: 0 10px;
+				padding: 20px 15px;
+				color: white;
+				white-space: nowrap;
+				cursor: pointer;
+			}
+		}
+		&__dropdown {
+			position: absolute;
+			background-color: MediumSeaGreen;
+			border-radius: 0px 0px 5px 5px;
+			padding: 10px 40px;
+			// top: $height-nav - 15px;
+			left: 0;
+			div {
+				margin: 20px 0;
+			}
+		}
+	}
+
+	.overlay {
+		position: fixed;
+		visibility: hidden;
+		background-color: black;
+		opacity: 0;
+		height: 100%;
+		width: 100%;
+		transition: all 0.5s ease;
+	}
+
+	.navToggle {
+		display: flex !important;
+	}
+}

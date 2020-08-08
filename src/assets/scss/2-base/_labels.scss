@@ -3,12 +3,37 @@
 	@include label-base();
 	@include label-variant(lighten($body-font-color, 5%), $bg-color-dark);
 	display: inline-block;
+	// padding: 5.4rem;
 
 	// Label rounded
 	&.label-rounded {
 		border-radius: 5rem;
 		padding-left: 0.4rem;
 		padding-right: 0.4rem;
+	}
+
+	&.label-about {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: $border-radius;
+		font-size: 8rem;
+		font-weight: bold;
+		line-height: 1.25;
+		padding: 0.9rem 0.9rem;
+		background-color: transparent;
+		opacity: 0.2;
+		@media (max-width: $size-xl) {
+			font-size: 5rem;
+		}
+		@media (max-width: $size-lg) {
+			opacity: 0.4;
+			font-size: 4rem;
+		}
+		@media (max-width: $size-md) {
+			opacity: 0.4;
+			font-size: 2rem;
+		}
 	}
 
 	// Label colors

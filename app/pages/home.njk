@@ -1,0 +1,15 @@
+{% set body_class = "build" %}
+{% import "./components/cards.njk" as card %}
+{% extends "layout.njk" %}
+
+{% block content %}
+{% include "./content/home-hero.html" %}
+{% include "./content/home-about.html" %}
+{% include "./content/home-how.html" %}
+{% include "./content/home-dna.html" %}
+{% include "./content/home-teaser.html" %}
+{% include "./content/home-portfolio.html" %}
+{% include "./content/home-meet.html" %}
+{% include "./content/home-tools.html" %}
+<!-- {% include "./content/paralax_001.html" %} -->
+{% endblock %}
