@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="86" viewBox="0 0 60 86">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="60" height="86" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Arrow_Down_White_Transparent" data-name="Arrow Down White Transparent" clip-path="url(#clip-path)">
+    <path id="Arrow_Down_Black" data-name="Arrow Down Black" d="M57.583,0,53.843,4.412s15.7,15.882,22.435,22.059c-23.615-.246-76.278,0-76.278,0v5.294s52.68-.192,76.278,0c-6.73,7.059-22.435,22.941-22.435,22.941L57.583,60,86,29.118Z" transform="translate(60) rotate(90)" fill="#f7f8fa" opacity="0.2"/>
+  </g>
+</svg>

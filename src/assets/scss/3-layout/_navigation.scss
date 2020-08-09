@@ -9,10 +9,11 @@
 		justify-content: space-between; // *
 		flex-direction: row; // *
 	}
+
 	.navbar {
 		width: 100%;
 		position: fixed;
-		z-index: 1000;
+		z-index: 388;
 		background-color: $black-color;
 		opacity: 0.8;
 		&__brand {
@@ -28,7 +29,7 @@
 			}
 			@media (max-width: $size-sm) {
 				h2 {
-					font-size: 1.3rem;
+					font-size: 0.93rem;
 				}
 			}
 		}
@@ -47,6 +48,7 @@
 			display: flex;
 			align-items: center;
 			position: relative;
+
 			span {
 				position: relative;
 				margin: 0 10px;
@@ -54,32 +56,23 @@
 				color: white;
 				white-space: nowrap;
 				cursor: pointer;
+				a {
+					padding: 20px 15px;
+					font-size: 1rem;
+					color: white;
+
+					&:hover {
+						color: $black-color;
+						background-color: $white-color;
+						// font-size: 1.2rem;
+						// transform: scale(1.2);
+					}
+				}
+
+				@media (max-width: $size-sm) {
+					padding: 0;
+				}
 			}
 		}
-		&__dropdown {
-			position: absolute;
-			background-color: MediumSeaGreen;
-			border-radius: 0px 0px 5px 5px;
-			padding: 10px 40px;
-			// top: $height-nav - 15px;
-			left: 0;
-			div {
-				margin: 20px 0;
-			}
-		}
-	}
-
-	.overlay {
-		position: fixed;
-		visibility: hidden;
-		background-color: black;
-		opacity: 0;
-		height: 100%;
-		width: 100%;
-		transition: all 0.5s ease;
-	}
-
-	.navToggle {
-		display: flex !important;
 	}
 }

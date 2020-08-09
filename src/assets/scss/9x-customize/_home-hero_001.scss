@@ -1,0 +1,78 @@
+.home-hero_001 {
+	position: relative;
+	overflow: hidden;
+	//margin-bottom: 1em;
+	height: 48em;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	// border-radius: 15px;
+	background: url(./../../assets/img/photography/black/Black_029.jpg);
+	background-size: cover;
+	background-position: 50% 10%;
+	//background-size: 100% auto;
+	background-repeat: no-repeat;
+
+	&__copyright {
+		padding: 1rem;
+		width: 100%;
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		bottom: 0;
+		a {
+			color: $white-color;
+		}
+	}
+	&__action {
+		position: absolute;
+		top: 20%;
+		left: 70%;
+		transform: scale(0.62);
+		transition: transform 0.3s ease;
+		&:hover {
+			transform: scale(0.7);
+			transition: transform 5s ease;
+			#Arrow_Right_White {
+				transform: translate(90%, 100%);
+			}
+		}
+		@media (max-width: $size-md) {
+			transform: scale(0.52);
+			max-width: 90%;
+			left: 10%;
+			top: 55%;
+		}
+	}
+
+	&__heading {
+		padding: 1rem;
+		max-width: 500px;
+		background-color: $black-color;
+		position: absolute;
+		left: 20%;
+		right: 20%;
+		top: 50%;
+		color: grey;
+
+		&::before {
+			content: '';
+			position: absolute;
+			border-bottom: 1px solid $white-color;
+			left: -30%;
+			width: 700px;
+			height: 1px;
+			transform: rotate(45deg);
+		}
+
+		span.theme-highlight {
+			color: $white-color;
+		}
+
+		@media (max-width: $size-md) {
+			max-width: 90%;
+			left: 0;
+			top: 20%;
+		}
+	}
+}

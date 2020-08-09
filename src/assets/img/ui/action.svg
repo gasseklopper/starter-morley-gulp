@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="416" height="416" viewBox="0 0 416 416">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="39" height="27" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_6" data-name="Gruppe 6" transform="translate(-149 -167)">
+    <g id="Ellipse" transform="translate(149 167)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1" opacity="0.4">
+      <circle cx="208" cy="208" r="208" stroke="none"/>
+      <circle cx="208" cy="208" r="207.5" fill="none"/>
+    </g>
+    <g id="Gruppe_5" data-name="Gruppe 5">
+      <g id="Arrow_Right_White" data-name="Arrow Right White" transform="translate(315 408)" clip-path="url(#clip-path)">
+        <path id="Path" d="M26.113,0l-1.7,1.985s7.122,7.147,10.174,9.926C23.882,11.8,0,11.912,0,11.912v2.382s23.89-.087,34.591,0c-3.052,3.176-10.174,10.324-10.174,10.324L26.113,27,39,13.1Z" fill="#f7f8fa"/>
+      </g>
+      <text id="check_new_look_books" data-name="check new look books" transform="translate(315 323)" fill="#fff" font-size="14" font-family="FuturaPT-Medium, Futura PT" font-weight="500" letter-spacing="0.26em"><tspan x="0" y="14">CHECK </tspan><tspan x="0" y="32">NEW</tspan><tspan x="0" y="50">UX </tspan><tspan x="0" y="68">EXPERIMENTS</tspan></text>
+    </g>
+  </g>
+</svg>
