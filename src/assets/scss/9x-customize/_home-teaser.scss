@@ -1,0 +1,39 @@
+.about {
+	.section-manifesto-cta {
+		position: relative;
+		background-color: $primary-color;
+		color: $secondary-color;
+		padding: 9.2rem 6.2rem;
+		margin: 2.2rem 0;
+		z-index: 141;
+
+		&::after {
+			position: absolute;
+			top: -80px;
+			left: -140px;
+			z-index: 14;
+			content: '';
+			width: 200px;
+			height: 200px;
+			background-color: $black-color;
+
+			@media (max-width: 900px) {
+				left: -100px;
+				width: 100px;
+				height: 100px;
+			}
+		}
+
+		@media (max-width: 900px) {
+			padding: 6.2rem 1.2rem;
+		}
+
+		&__text {
+			p {
+				font-size: 1.875rem;
+				line-height: 2.25rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+}

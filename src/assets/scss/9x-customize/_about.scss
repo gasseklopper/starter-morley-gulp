@@ -13,22 +13,23 @@
 	}
 	.about-tag {
 		margin-top: 300px;
+		padding-left: 5rem;
+		padding-top: 1.3rem;
 		width: auto;
 		height: 200px;
+		transform: scale(2);
 
-		@media (max-width: 960px) {
-			margin-top: 130px;
-			transform: rotate(90deg);
-			// width: auto;
-			width: 390px;
-			height: auto;
+		@media (max-width: $size-lg) {
+			margin-top: 10px;
+			padding-top: 1.3rem;
+			margin-bottom: 6rem;
 		}
 
 		@media (max-width: 599px) {
-			// margin-top: 130px;
-			transform: rotate(0deg);
-			width: auto;
-			height: 200px;
+			margin-top: 100px;
+			// padding-left: 5rem;
+			padding-top: 3rem;
+			margin-bottom: 6rem;
 		}
 	}
 
@@ -116,6 +117,7 @@
 		// position: absolute;
 		z-index: 14;
 		margin-top: -100px;
+		margin-bottom: 100px;
 		// left: 0;
 		// margin-right: 10px;
 		height: 614px;
@@ -123,61 +125,39 @@
 		background: url('../img/photography/blacker/photography_blackerthandays_001.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
+
 		@media (max-width: 900px) {
 			width: 100%;
 		}
+
 		&__content-wrap {
-			padding: 6.2rem 3.2rem;
+			padding: 4.2rem 3.2rem;
 			z-index: 141;
 			margin-top: -100px;
 			height: auto;
 			background-color: white;
 
 			@media (max-width: 900px) {
-				padding: 6.2rem 1.2rem;
+				padding: 3.2rem 1.2rem;
 				height: auto;
 			}
-		}
-	}
 
-	.section-manifesto-cta {
-		position: relative;
-		background-color: $primary-color;
-		color: $secondary-color;
-		padding: 9.2rem 6.2rem;
-		margin: 2.2rem 0;
-		z-index: 141;
-
-		&::after {
-			position: absolute;
-			top: -80px;
-			left: -140px;
-			z-index: 14;
-			content: '';
-			width: 200px;
-			height: 200px;
-			background-color: $dark-color;
-
-			@media (max-width: 900px) {
-				left: -100px;
-				width: 100px;
-				height: 100px;
-			}
-		}
-
-		@media (max-width: 900px) {
-			padding: 6.2rem 1.2rem;
-		}
-		&__text {
-			p {
-				font-size: 1.875rem;
-				line-height: 2.25rem;
-				margin-bottom: 0;
+			.btn-cta {
+				margin-top: 3rem;
+				max-width: 50%;
+				@media (max-width: $size-xl) {
+					max-width: 80%;
+				}
+				@media (max-width: $size-lg) {
+					max-width: 100%;
+				}
 			}
 		}
 	}
 
 	.section-projects {
+		padding-top: 3rem;
+
 		&__cards {
 			position: relative;
 			// align-content: center;

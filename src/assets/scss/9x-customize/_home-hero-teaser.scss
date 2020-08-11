@@ -1,5 +1,7 @@
 .home-hero-teaser {
+	background-color: $black-color;
 	margin-bottom: 3rem;
+
 	a {
 		color: white;
 		transition: transform 1.3s;
@@ -8,8 +10,6 @@
 			transform: scale(1.2);
 		}
 	}
-
-	background-color: $black-color;
 
 	&__hero {
 		position: relative;
@@ -25,6 +25,13 @@
 
 		&:hover {
 			transform: scale(1.2);
+		}
+
+		@media (max-width: $size-sm) {
+			top: 4%;
+			left: 20%;
+			width: 270px;
+			height: 170px;
 		}
 	}
 
@@ -53,6 +60,7 @@
 			left: -10%;
 			width: 400px;
 			height: 400px;
+
 			&::before {
 				content: 'hello world';
 				position: absolute;
@@ -66,6 +74,7 @@
 			left: -4%;
 			width: 300px;
 			height: 300px;
+
 			&::before {
 				content: 'hello world';
 				position: absolute;
@@ -75,10 +84,11 @@
 		}
 
 		@media (max-width: $size-sm) {
-			top: 60%;
+			top: 82%;
 			left: 10%;
 			width: 200px;
 			height: 200px;
+
 			&::before {
 				content: 'hello world';
 				position: absolute;
@@ -96,8 +106,8 @@
 
 	&__link {
 		text-align: center;
-
 		line-height: 2.8rem;
+
 		a {
 			font-size: 3rem;
 			color: white;
@@ -106,6 +116,24 @@
 			&:hover {
 				font-size: 5rem;
 				transform: scale(1.2);
+			}
+		}
+
+		@media (max-width: $size-sm) {
+			// position: absolute;
+			margin-top: -10%;
+			// line-height: 2.8rem;
+			padding-bottom: 1rem;
+
+			a {
+				font-size: 1.8rem;
+				color: white;
+				transition: font-size 1.3s;
+
+				&:hover {
+					font-size: 2rem;
+					transform: scale(1.2);
+				}
 			}
 		}
 	}
