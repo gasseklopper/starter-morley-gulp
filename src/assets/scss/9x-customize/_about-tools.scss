@@ -1,0 +1,32 @@
+.about-tools {
+	// background-color: red;
+	&__subcategory {
+		// width: 50%;
+		h2 {
+			font-size: 1rem;
+			span {
+				a {
+					pointer-events: none;
+				}
+			}
+		}
+	}
+
+	&__tool-list {
+		.tool-item {
+			display: flex;
+			padding: 1rem;
+			background-color: $white-color;
+			// width: 300px;
+			height: 100px;
+			margin-bottom: 1rem;
+			img {
+				align-self: center;
+			}
+			a {
+				align-self: center;
+				padding-left: 0.6rem;
+			}
+		}
+	}
+}
